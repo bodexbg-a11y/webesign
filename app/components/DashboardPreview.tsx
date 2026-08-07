@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function DashboardPreview() {
   return (
     <div className="dashboard-wrap" aria-label="OPSYNQ Business Operating System dashboard preview">
       <div className="dashboard-glow" />
       <div className="dashboard">
-        <aside><div className="dash-brand"><b>O</b></div><div className="side-icon active">⌂</div><div className="side-icon">◎</div><div className="side-icon">▣</div><div className="side-icon">◇</div><div className="side-icon">≡</div><div className="avatar">AK</div></aside>
+        <aside><div className="dash-brand"><span className="dash-brand-logo"><Image src="/opsynq-logo.png" width={50} height={25} alt="" /></span></div><div className="side-icon active">⌂</div><div className="side-icon">◎</div><div className="side-icon">▣</div><div className="side-icon">◇</div><div className="side-icon">≡</div><div className="avatar">AK</div></aside>
         <div className="dash-main">
           <header><div><small>EXECUTIVE OVERVIEW</small><h3>Good morning, Alex.</h3></div><button>+ New report</button></header>
           <div className="metrics"><div><span>Revenue</span><b>€482.6k</b><small className="up">↗ 12.4%</small></div><div><span>Active projects</span><b>38</b><small>7 due soon</small></div><div><span>Operating margin</span><b>24.8%</b><small className="up">↗ 3.2%</small></div></div>

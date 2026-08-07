@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Brand({ href = "/" }: { href?: string }) {
-  return <Link className="brand" href={href} aria-label="OPSYNQ home"><span className="brand-mark">O</span>OP<span>SYNQ</span></Link>;
+  return <Link className="brand" href={href} aria-label="OPSYNQ home"><span className="brand-logo" aria-hidden="true"><Image src="/opsynq-logo.png" width={68} height={34} alt="" /></span>OP<span>SYNQ</span></Link>;
 }
 
 export default function SiteHeader() {

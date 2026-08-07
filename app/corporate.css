@@ -1,5 +1,9 @@
 .site-header { background:#08090b; }
 .site-header .nav { border-bottom-color:#22252b; }
+.brand-logo { width:34px; height:34px; margin-right:8px; overflow:hidden; border-radius:50%; flex:0 0 auto; box-shadow:0 0 0 1px rgba(79,134,247,.28); }
+.brand-logo img { display:block; width:68px; height:34px; max-width:none; transform:translateX(-17px); }
+.dash-brand-logo { display:block; width:25px; height:25px; overflow:hidden; border-radius:50%; box-shadow:0 0 0 1px rgba(79,134,247,.35); }
+.dash-brand-logo img { display:block; width:50px; height:25px; max-width:none; transform:translateX(-12.5px); }
 .site-footer { background:#07080a; padding:72px 0 26px; }
 .footer-main { display:grid; grid-template-columns:1.35fr repeat(3,1fr); gap:70px; padding-bottom:60px; }
 .footer-main>div { display:flex; flex-direction:column; align-items:flex-start; gap:13px; }
