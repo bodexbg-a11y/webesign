@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE_URL, marketLinks, serviceLinks } from "./seo-data";
 
 export const metadata: Metadata = {
-  title: "Business Operating System & Automation Software | NORTH/OS",
+  title: { absolute: "Business Operating System & Automation Software | NORTH/OS" },
   description: "One custom Business Operating System for CRM, operations, employees, finance, documents, reporting, integrations and AI automation.",
 };
 
