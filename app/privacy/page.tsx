@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "../components/SafeLink";
 import LegalShell from "../components/LegalShell";
 import { legalDetails } from "../legal-data";
 

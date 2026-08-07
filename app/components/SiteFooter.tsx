@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "./SafeLink";
 import { Brand } from "./SiteHeader";
 
 export default function SiteFooter() {

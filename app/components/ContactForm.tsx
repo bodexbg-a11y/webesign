@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import Link from "next/link";
+import Link from "./SafeLink";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
