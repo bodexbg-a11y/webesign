@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { SITE_URL, marketLinks, serviceLinks } from "./seo-data";
 
 export const metadata: Metadata = {
   title: "Business Operating System & Automation Software | NORTH/OS",
@@ -35,13 +37,47 @@ const industries = ["Construction", "Manufacturing", "Healthcare", "Logistics", 
 const process = ["Discovery", "Business Analysis", "UX/UI Design", "System Implementation", "Integration", "Launch", "Continuous Improvement"];
 const integrations = ["Google Ads", "Meta / Facebook", "Excel", "Google Workspace", "Microsoft 365", "OpenAI", "Your databases", "Any API"];
 
+const buildLinks: Record<string, string> = {
+  "Custom CRM": "/services/custom-crm-development",
+  "ERP Systems": "/services/custom-erp-development",
+  "Business Operating Systems": "/services/custom-business-software",
+  "Client Portals": "/services/custom-business-software",
+  "Employee Portals": "/services/custom-business-software",
+  "Internal Dashboards": "/services/business-automation-software",
+  "AI Assistants": "/services/ai-business-automation",
+  "Workflow Automation": "/services/workflow-automation",
+  "Document Management": "/services/workflow-automation",
+  "Inventory Systems": "/services/custom-erp-development",
+  "Finance Dashboards": "/services/business-automation-software",
+  "Reporting Systems": "/services/business-automation-software",
+  "Custom Mobile Apps": "/services/custom-business-software",
+  "API Integrations": "/services/workflow-automation",
+};
+
+const industryLinks: Record<string, string> = {
+  Construction: "/solutions/construction-os",
+  Manufacturing: "/solutions/manufacturing-os",
+  Logistics: "/solutions/logistics-os",
+  "Real Estate": "/solutions/property-management-os",
+  Wholesale: "/solutions/distribution-os",
+};
+
+const homeFaqs = [
+  ["Why custom software instead of Bitrix24 or HubSpot?", "Standard platforms make you adapt your operation to their model. A custom Business OS preserves your unique workflows, removes licensing constraints, connects every department, and becomes an asset you own."],
+  ["How long does implementation take?", "A focused first release typically takes 6–12 weeks. Larger multi-department platforms are introduced in controlled phases, so you begin seeing value long before the full roadmap is complete."],
+  ["Can you integrate our existing systems?", "Yes. We connect ERPs, CRMs, accounting platforms, banks, communication tools, legacy databases, and virtually any service with a usable API."],
+  ["Can we continue expanding later?", "Absolutely. Modular architecture is central to our work. New teams, workflows, integrations, and AI capabilities can be added as the business evolves."],
+  ["Who owns the code?", "You do. On completion and payment, the agreed source code and intellectual property are transferred to your company. There is no platform lock-in."],
+];
+
 export default function Home() {
+  const schema = {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":`${SITE_URL}/#organization`,"name":"NORTH/OS","url":SITE_URL,"description":"Premium Business Automation Studio providing custom Business Operating Systems for growing companies.","areaServed":["Netherlands","Denmark","Norway","Sweden"],"knowsAbout":["Custom Business Software","Business Automation","Custom CRM Development","Custom ERP Development","Workflow Automation","AI Business Automation"]},{"@type":"WebSite","@id":`${SITE_URL}/#website`,"url":SITE_URL,"name":"NORTH/OS","publisher":{"@id":`${SITE_URL}/#organization`},"inLanguage":"en"},{"@type":"Service","@id":`${SITE_URL}/#service`,"name":"Custom Business Operating Systems","provider":{"@id":`${SITE_URL}/#organization`},"areaServed":["Netherlands","Denmark","Norway","Sweden"],"serviceType":serviceLinks.map((service)=>service.label)},{"@type":"FAQPage","mainEntity":homeFaqs.map(([question,answer])=>({"@type":"Question","name":question,"acceptedAnswer":{"@type":"Answer","text":answer}}))}]};
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"NORTH/OS","url":"https://webesign.vercel.app","description":"Premium Business Automation Studio providing custom Business Operating Systems for growing companies.","areaServed":["Netherlands","Denmark","Norway","Sweden","Ireland"]},{"@type":"SoftwareApplication","name":"NORTH/OS Business Operating System","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Custom business automation software connecting CRM, operations, employees, finance, documents, reporting, integrations and AI."}]})}} />
+      <script id="home-schema" type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(schema)}} />
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="North OS home"><span className="brand-mark">N</span>NORTH<span>/OS</span></a>
-        <div className="nav-links"><a href="#solutions">Solutions</a><a href="#industries">Industries</a><a href="#process">Process</a><a href="#about">Approach</a><div className="languages"><button aria-label="Choose language">EN⌄</button><div><a href="/nl">NL</a><a href="/da">DA</a><a href="/no">NO</a><a href="/sv">SV</a><a href="/ie">IE</a></div></div></div>
+        <div className="nav-links"><a href="#solutions">Solutions</a><a href="#industries">Industries</a><a href="#process">Process</a><a href="#about">Approach</a><div className="languages"><button aria-label="Choose market">EN⌄</button><div>{marketLinks.map((market)=><Link key={market.href} href={market.href}>{market.label}</Link>)}</div></div></div>
         <a className="nav-cta" href="#contact">Book a strategy call <span>↗</span></a>
       </nav>
 
@@ -86,10 +122,10 @@ export default function Home() {
 
       <section className="build-section" id="solutions"><div className="shell">
         <div className="section-head dark-head"><div><div className="kicker">02 / WHAT YOUR SYSTEM CAN INCLUDE</div><h2>Your business.<br/><em>One intelligent system.</em></h2></div><p>Start with the operational priorities that matter now. Every capability is designed to work as part of one coherent platform and expand with the business.</p></div>
-        <div className="build-list">{buildItems.map(([n,title,text])=><article key={title}><span>{n}</span><h3>{title}</h3><p>{text}</p><i>↗</i></article>)}</div>
+        <div className="build-list">{buildItems.map(([n,title,text])=><Link href={buildLinks[title]} key={title}><article><span>{n}</span><h3>{title}</h3><p>{text}</p><i>↗</i></article></Link>)}</div>
       </div></section>
 
-      <section className="industry-section" id="industries"><div className="shell industry-grid"><div className="industry-copy"><div className="kicker">03 / INDUSTRIES</div><h2>Complex operations.<br/><em>Made clear.</em></h2><p>We work where generic tools break down: multi-stage operations, specialist workflows, demanding compliance, and data that must move across teams.</p><a href="#contact">Discuss your industry <span>↗</span></a></div><div className="industry-list">{industries.map((x,i)=><div key={x}><span>0{i+1}</span><b>{x}</b><i>↗</i></div>)}</div></div></section>
+      <section className="industry-section" id="industries"><div className="shell industry-grid"><div className="industry-copy"><div className="kicker">03 / INDUSTRIES</div><h2>Complex operations.<br/><em>Made clear.</em></h2><p>We work where generic tools break down: multi-stage operations, specialist workflows, demanding compliance, and data that must move across teams.</p><a href="#contact">Discuss your industry <span>↗</span></a></div><div className="industry-list">{industries.map((x,i)=><Link href={industryLinks[x] ?? "#contact"} key={x}><span>0{i+1}</span><b>{x}</b><i>↗</i></Link>)}</div></div></section>
 
       <section className="platform-section" id="platform"><div className="shell"><div className="platform-top"><div className="kicker">04 / YOUR CONTROL CENTER</div><h2>Everything that runs<br/>your business. <em>Connected.</em></h2></div>
         <div className="platform-ui"><div className="platform-nav"><b>NORTH<span>/OS</span></b><small>MAIN WORKSPACE</small>{["Overview","CRM","Projects","Finance","Inventory","Documents","Automations","Analytics"].map((x,i)=><div className={i===0?"selected":""} key={x}><i>{["⌂","◎","▣","€","◇","□","✦","⌁"][i]}</i>{x}{i===6&&<span>12</span>}</div>)}</div><div className="platform-main"><header><div><small>OPERATIONS / OVERVIEW</small><h3>Company overview</h3></div><div className="people"><i>ML</i><i>AK</i><i>+8</i></div></header><div className="platform-metrics"><div><span>Monthly revenue</span><b>€482,680</b><small>↑ 12.4% vs last month</small></div><div><span>Open projects</span><b>38</b><small>92% on schedule</small></div><div><span>Tasks completed</span><b>1,248</b><small>↑ 18% efficiency</small></div><div><span>Outstanding</span><b>€64,200</b><small>8 invoices</small></div></div><div className="lower-grid"><div className="big-graph"><div className="card-head"><div><small>CASH FLOW</small><b>Financial performance</b></div><span>2026⌄</span></div><div className="line-chart"><i className="line one"/><i className="line two"/><i className="line three"/><i className="line four"/><i className="line five"/><i className="line six"/><div className="dot"/></div></div><div className="task-card"><div className="card-head"><div><small>WORKLOAD</small><b>Teams</b></div><span>•••</span></div>{[["Operations",82],["Sales",68],["Finance",54],["Delivery",76]].map(([x,n])=><div className="team" key={String(x)}><span>{x}</span><i><b style={{width:`${n}%`}}/></i><small>{n}%</small></div>)}</div></div></div></div>
@@ -99,17 +135,11 @@ export default function Home() {
 
       <section className="process-section" id="process"><div className="shell"><div className="section-head"><div><div className="kicker">05 / HOW WE WORK</div><h2>From complexity<br/>to <em>clarity.</em></h2></div><p>A rigorous, transparent process that de-risks transformation and delivers usable value at every stage.</p></div><div className="process-list">{process.map((x,i)=><article key={x}><span>0{i+1}</span><i/><h3>{x}</h3><p>{["We map the ambition, constraints, and real business outcomes.","We study how work actually moves across people, tools, and data.","We prototype the experience before configuring the full system.","The platform is implemented securely in clear, usable stages.","Your existing systems become part of one reliable information flow.","We migrate, train, test, and release without operational surprises.","The platform evolves as your organization and advantage grow."][i]}</p></article>)}</div></div></section>
 
-      <section className="faq-section"><div className="shell faq-grid"><div><div className="kicker">06 / QUESTIONS</div><h2>Before we<br/><em>begin.</em></h2><p>Have a different question?</p><a href="#contact">Talk to a systems architect ↗</a></div><div>{[
-        ["Why custom software instead of Bitrix24 or HubSpot?","Standard platforms make you adapt your operation to their model. A custom Business OS preserves your unique workflows, removes licensing constraints, connects every department, and becomes an asset you own."],
-        ["How long does implementation take?","A focused first release typically takes 6–12 weeks. Larger multi-department platforms are introduced in controlled phases, so you begin seeing value long before the full roadmap is complete."],
-        ["Can you integrate our existing systems?","Yes. We connect ERPs, CRMs, accounting platforms, banks, communication tools, legacy databases, and virtually any service with a usable API."],
-        ["Can we continue expanding later?","Absolutely. Modular architecture is central to our work. New teams, workflows, integrations, and AI capabilities can be added as the business evolves."],
-        ["Who owns the code?","You do. On completion and payment, the agreed source code and intellectual property are transferred to your company. There is no platform lock-in."],
-      ].map(([q,a],i)=><details key={q} open={i===0}><summary><span>0{i+1}</span>{q}<i>+</i></summary><p>{a}</p></details>)}</div></div></section>
+      <section className="faq-section"><div className="shell faq-grid"><div><div className="kicker">06 / QUESTIONS</div><h2>Before we<br/><em>begin.</em></h2><p>Have a different question?</p><a href="#contact">Talk to a systems architect ↗</a></div><div>{homeFaqs.map(([q,a],i)=><details key={q} open={i===0}><summary><span>0{i+1}</span>{q}<i>+</i></summary><p>{a}</p></details>)}</div></div></section>
 
       <section className="contact-section" id="contact"><div className="shell contact-grid"><div><div className="kicker">START A CONVERSATION</div><h2>Ready to automate<br/>your <em>business?</em></h2><p>Tell us where manual work, spreadsheets or disconnected systems are slowing the company down. We will show you what one connected Business Operating System could change.</p><div className="contact-points"><span><i>✓</i> 30-minute strategy session</span><span><i>✓</i> No generic sales presentation</span><span><i>✓</i> Clear technical and operational direction</span></div></div><form className="simple-form"><div className="form-intro"><span>01</span><div><b>Tell us about the business</b><small>Six simple fields. Usually under two minutes.</small></div></div><div className="form-row"><label>Full Name<input name="name" placeholder="Your full name" required /></label><label>Company<input name="company" placeholder="Company name" required /></label></div><div className="form-row"><label>Business Email<input type="email" name="email" placeholder="you@company.com" required /></label><label>Company Website<input type="url" name="website" placeholder="https://company.com" /></label></div><label>Number of Employees<select name="company-size" required defaultValue=""><option value="" disabled>Select company size</option><option>10–25</option><option>26–50</option><option>51–100</option><option>101–250</option><option>251–500</option><option>500+</option></select></label><label>What would you like to automate?<textarea name="description" rows={5} placeholder="Describe the manual work, disconnected tools or operational bottlenecks you want to improve." required /></label><button type="submit">Book strategy call <span>↗</span></button><small>By submitting, you agree to our privacy policy. No spam. Ever.</small></form></div></section>
 
-      <footer><div className="shell footer-top"><a className="brand" href="#top"><span className="brand-mark">N</span>NORTH<span>/OS</span></a><p>We turn complex businesses into clear, connected systems.</p><div><a href="#solutions">Solutions</a><a href="#industries">Industries</a><a href="#process">Process</a><a href="#contact">Contact</a></div></div><div className="shell footer-bottom"><span>© 2026 NORTH/OS. All rights reserved.</span><span>Sofia · London · Working globally</span><span>LinkedIn ↗</span></div></footer>
+      <footer><div className="shell footer-top"><a className="brand" href="#top"><span className="brand-mark">N</span>NORTH<span>/OS</span></a><p>We turn complex businesses into clear, connected systems.</p><div>{serviceLinks.slice(0,4).map((service)=><Link key={service.href} href={service.href}>{service.label}</Link>)}{marketLinks.map((market)=><Link key={market.href} href={market.href}>{market.label}</Link>)}</div></div><div className="shell footer-bottom"><span>© 2026 NORTH/OS. All rights reserved.</span><span>Netherlands · Norway · Sweden · Denmark</span><span>Working globally</span></div></footer>
     </main>
   );
 }

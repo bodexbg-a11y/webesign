@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "./seo-data";
 
 export default function robots(): MetadataRoute.Robots {
-  return { rules: { userAgent: "*", allow: "/" }, sitemap: "https://webesign.vercel.app/sitemap.xml", host: "https://webesign.vercel.app" };
+  return { rules: { userAgent: "*", allow: "/" }, sitemap: `${SITE_URL}/sitemap.xml`, host: SITE_URL };
 }
