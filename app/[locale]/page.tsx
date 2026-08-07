@@ -4,20 +4,21 @@ import { notFound } from "next/navigation";
 import {
   SITE_URL,
   marketAlternates,
-  marketLinks,
   markets,
   serviceLinks,
   type MarketLocale,
 } from "../seo-data";
+import SiteFooter from "../components/SiteFooter";
+import SiteHeader from "../components/SiteHeader";
 
 const marketFaqs = [
   [
-    "Can NORTH/OS integrate the software we already use?",
+    "Can OPSYNQ integrate the software we already use?",
     "Yes. We can connect accounting, CRM, advertising, Microsoft 365, Google Workspace, databases and specialist platforms through their available APIs. The goal is one reliable operating flow, not change for its own sake.",
   ],
   [
     "Is this standard SaaS or custom business software?",
-    "NORTH/OS is a tailored Business Operating System. The data model, permissions, workflows, dashboards and integrations are configured or developed around your company instead of forcing your teams into a fixed subscription product.",
+    "OPSYNQ is a tailored Business Operating System. The data model, permissions, workflows, dashboards and integrations are configured or developed around your company instead of forcing your teams into a fixed subscription product.",
   ],
   [
     "Can implementation be delivered remotely?",
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: [market.primaryKeyword, ...market.secondaryKeywords],
     alternates: { canonical: `/${locale}`, languages: marketAlternates },
     openGraph: {
-      title: `${market.headline} | NORTH/OS`,
+      title: `${market.headline} | OPSYNQ`,
       description: market.description,
       url: `/${locale}`,
       type: "website",
@@ -65,7 +66,7 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
         "@id": `${SITE_URL}/${locale}#service`,
         name: `Business automation software in ${market.country}`,
         description: market.description,
-        provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "NORTH/OS", url: SITE_URL },
+        provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "OPSYNQ", url: SITE_URL },
         areaServed: { "@type": "Country", name: market.country },
         audience: { "@type": "BusinessAudience", audienceType: "CEOs, founders, managing directors and operations leaders" },
         serviceType: ["Custom Business Software", "Custom CRM Development", "Custom ERP Development", "Workflow Automation", "AI Business Automation"],
@@ -92,21 +93,14 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
     <main className="locale-page">
       <script id={`market-schema-${locale}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <nav className="nav shell" aria-label="Main navigation">
-        <Link className="brand" href="/" aria-label="NORTH OS home"><span className="brand-mark">N</span>NORTH<span>/OS</span></Link>
-        <div className="locale-nav" aria-label="Markets">
-          <Link href="/">Global</Link>
-          {marketLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
-        </div>
-        <Link className="nav-cta" href="/#contact">Book a strategy call <span>↗</span></Link>
-      </nav>
+      <SiteHeader />
 
       <section className="locale-hero shell">
         <div className="eyebrow"><i /> BUSINESS AUTOMATION · {market.country.toUpperCase()}</div>
         <h1>{market.headline.split(" for ")[0]}<br /><em>for {market.adjective} companies.</em></h1>
         <p>Replace disconnected CRM software, Excel spreadsheets and manual work with one custom Business Operating System—built around your workflows, people, data and operational priorities.</p>
         <div className="actions">
-          <Link className="button primary" href="/#contact">Book a strategy call <span>↗</span></Link>
+          <Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link>
           <Link className="button ghost" href="/services/business-automation-software">Explore business automation <span>↓</span></Link>
         </div>
         <div className="locale-orbit" aria-hidden="true"><b>CRM</b><b>AI</b><b>ERP</b><b>OPS</b><i>ONE<br />SYSTEM</i></div>
@@ -114,7 +108,7 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
 
       <section className="locale-proof">
         <div className="shell">
-          <div className="kicker">NORTH/OS / {market.country.toUpperCase()}</div>
+          <div className="kicker">OPSYNQ / {market.country.toUpperCase()}</div>
           <h2>Custom business software should fit the operation. <em>Precisely.</em></h2>
           <div>
             <p>{market.context}</p>
@@ -143,7 +137,7 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
           <div>
             <div className="kicker">BUILT FOR {market.adjective.toUpperCase()} OPERATIONS</div>
             <h2>From manual coordination to one operational system.</h2>
-            <p>Custom software is valuable when the business has outgrown generic CRM packages, spreadsheets and isolated departmental tools. NORTH/OS maps the actual flow of enquiries, approvals, projects, resources, documents, invoices and management decisions before defining the platform.</p>
+            <p>Custom software is valuable when the business has outgrown generic CRM packages, spreadsheets and isolated departmental tools. OPSYNQ maps the actual flow of enquiries, approvals, projects, resources, documents, invoices and management decisions before defining the platform.</p>
             <p>The result is not another application sitting beside the existing stack. It is a connected management layer that can replace weak tools, integrate the systems worth keeping and give every employee a clear operational workspace.</p>
           </div>
           <div className="market-priority-list">
@@ -173,7 +167,7 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
           <div>
             <p>Our platform is suited to {market.industries}. The same Business Operating System core is configured around the data, roles, controls and workflows of each client.</p>
             <div className="text-link-grid">
-              <Link href="/solutions/construction-os">Construction management software ↗</Link>
+              <Link href="/construction-os">Construction management software ↗</Link>
               <Link href="/solutions/manufacturing-os">Manufacturing operations software ↗</Link>
               <Link href="/solutions/logistics-os">Logistics management software ↗</Link>
               <Link href="/solutions/distribution-os">Distribution management software ↗</Link>
@@ -192,12 +186,12 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
         <div className="shell">
           <h2>Ready to simplify your {market.adjective.toLowerCase()} operation?</h2>
           <p>Tell us where disconnected systems and manual work are slowing the company down. We will map what one connected Business Operating System could change.</p>
-          <Link className="button primary" href="/#contact">Book a strategy call <span>↗</span></Link>
+          <Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link>
           <small>{market.city} · Remote implementation across {market.country}</small>
         </div>
       </section>
 
-      <footer><div className="shell footer-bottom"><span>© 2026 NORTH/OS</span><span>{market.country} · English-language service</span><Link href="/">Global website ↗</Link></div></footer>
+      <SiteFooter />
     </main>
   );
 }

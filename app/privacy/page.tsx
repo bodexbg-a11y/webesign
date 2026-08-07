@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import LegalShell from "../components/LegalShell";
+import { legalDetails } from "../legal-data";
+
+export const metadata: Metadata = { title: "Privacy Policy", description: "How OPSYNQ collects, uses, protects and retains personal data.", alternates: { canonical: "/privacy" } };
+
+export default function PrivacyPage() {
+  return (
+    <LegalShell eyebrow="GDPR / DATA PROTECTION" title="Privacy Policy" intro={`Last updated ${legalDetails.lastUpdated}. This policy explains how OPSYNQ handles personal data when you use this website or contact us about our services.`}>
+      <section className="legal-alert"><b>Company information required</b><p>The exact contracting entity, registration number and registered address must be added before paid advertising or commercial launch. Current operator details are listed in the Legal Notice.</p></section>
+      <section><h2>1. Who controls your data</h2><p>The website and OPSYNQ service are operated under the OPSYNQ trading name. The confirmed legal entity will act as data controller and will be published in our <Link href="/legal">Legal Notice</Link>. Privacy enquiries can be sent to <a href={`mailto:${legalDetails.privacyEmail}`}>{legalDetails.privacyEmail}</a>.</p></section>
+      <section><h2>2. Personal data we collect</h2><p>When you contact us or request a demonstration, we may receive your name, company, business email, telephone number, company website, number of employees, project interests and the operational information you choose to include.</p><p>Our hosting and security providers may process basic technical information such as IP address, device and browser data, request time, referring page and security logs. Analytics or advertising data is processed only after the relevant consent where required.</p></section>
+      <section><h2>3. Why we use personal data</h2><ul><li>To respond to enquiries and arrange strategy calls or demonstrations.</li><li>To understand requirements and prepare proposals, estimates or requested pre-contract information.</li><li>To operate, secure and improve the website and prevent abuse.</li><li>To meet accounting, tax, contractual or other legal obligations.</li><li>To measure website performance or advertising only where consent has been provided.</li></ul></section>
+      <section><h2>4. Legal bases</h2><p>Depending on the activity, processing may be necessary to take steps at your request before entering a contract, to perform a contract, to comply with a legal obligation, or for legitimate interests such as responding to business enquiries and protecting our systems. Consent is used for non-essential analytics, advertising technologies and optional marketing communication where required. You may withdraw consent at any time.</p></section>
+      <section><h2>5. Who receives the data</h2><p>Personal data may be processed by hosting, email, scheduling, security, analytics, advertising, CRM, accounting and professional advisory providers where necessary. Providers receive only the access required for their role and are expected to process data under appropriate contractual and security safeguards.</p></section>
+      <section><h2>6. International transfers</h2><p>Some technology providers may process data outside the European Economic Area. Where this occurs, we will rely on an applicable transfer mechanism such as an adequacy decision, Standard Contractual Clauses or another lawful safeguard, together with additional measures where appropriate.</p></section>
+      <section><h2>7. Retention</h2><p>General enquiries may be retained for up to 24 months so we can manage follow-up and maintain a record of business communication. Contract, accounting and legal records may be retained for longer where required by law or necessary to establish, exercise or defend legal claims. Consent preferences remain on your device until changed or browser storage is cleared.</p></section>
+      <section><h2>8. Your rights</h2><p>Subject to applicable law, you may request access, correction, deletion, restriction, portability or objection to processing. You may withdraw consent without affecting earlier lawful processing. You may also lodge a complaint with the data protection authority in your country of residence or work.</p></section>
+      <section><h2>9. Automated decisions</h2><p>Website enquiries are not subject to decisions producing legal or similarly significant effects solely through automated processing. If this changes, the policy will be updated before such processing begins.</p></section>
+      <section><h2>10. Security and contact</h2><p>We use proportionate technical and organisational safeguards, but no internet transmission can be guaranteed completely secure. Contact <a href={`mailto:${legalDetails.privacyEmail}`}>{legalDetails.privacyEmail}</a> for privacy questions or rights requests.</p></section>
+      <section><h2>11. Changes</h2><p>We may update this policy when the website, providers or legal requirements change. The updated date at the top identifies the current version.</p></section>
+    </LegalShell>
+  );
+}

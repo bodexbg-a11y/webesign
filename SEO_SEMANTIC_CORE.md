@@ -1,4 +1,4 @@
-# NORTH/OS semantic core
+# OPSYNQ semantic core
 
 Target language: English  
 Priority markets: Netherlands, Norway, Sweden, Denmark  

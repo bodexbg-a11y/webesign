@@ -8,6 +8,8 @@ import {
   services,
   type ServiceSlug,
 } from "../../seo-data";
+import SiteFooter from "../../components/SiteFooter";
+import SiteHeader from "../../components/SiteHeader";
 
 export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({ slug }));
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: [service.primaryKeyword, ...service.keywords],
     alternates: { canonical: `/services/${slug}` },
     openGraph: {
-      title: `${service.title} | NORTH/OS`,
+      title: `${service.title} | OPSYNQ`,
       description: service.description,
       url: `/services/${slug}`,
       type: "website",
@@ -45,7 +47,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         "@id": `${SITE_URL}/services/${slug}#service`,
         name: service.name,
         description: service.description,
-        provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "NORTH/OS", url: SITE_URL },
+        provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "OPSYNQ", url: SITE_URL },
         areaServed: ["Netherlands", "Norway", "Sweden", "Denmark"],
         audience: { "@type": "BusinessAudience", audienceType: "CEOs, founders, managing directors and operations leaders" },
         serviceType: service.keywords,
@@ -54,7 +56,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/#solutions` },
+          { "@type": "ListItem", position: 2, name: "Solutions", item: `${SITE_URL}/solutions` },
           { "@type": "ListItem", position: 3, name: service.name, item: `${SITE_URL}/services/${slug}` },
         ],
       },
@@ -75,21 +77,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     <main className="locale-page service-page">
       <script id={`service-schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <nav className="nav shell" aria-label="Main navigation">
-        <Link className="brand" href="/" aria-label="NORTH OS home"><span className="brand-mark">N</span>NORTH<span>/OS</span></Link>
-        <div className="locale-nav"><Link href="/#solutions">Services</Link><Link href="/#industries">Industries</Link><Link href="/#process">Process</Link><Link href="/#contact">Contact</Link></div>
-        <Link className="nav-cta" href="/#contact">Book a strategy call <span>↗</span></Link>
-      </nav>
+      <SiteHeader />
 
       <section className="locale-hero shell service-hero">
         <div className="eyebrow"><i /> {service.eyebrow}</div>
         <h1>{service.headline.split(".")[0]}.<br /><em>Built as one system.</em></h1>
         <p>{service.intro}</p>
         <div className="actions">
-          <Link className="button primary" href="/#contact">Discuss your operation <span>↗</span></Link>
-          <Link className="button ghost" href="/#platform">See the platform <span>↓</span></Link>
+          <Link className="button primary" href="/contact">Discuss your operation <span>↗</span></Link>
+          <Link className="button ghost" href="/solutions">See the platform <span>↓</span></Link>
         </div>
-        <div className="locale-orbit" aria-hidden="true"><b>DATA</b><b>AI</b><b>RULES</b><b>API</b><i>NORTH<br />OS</i></div>
+        <div className="locale-orbit" aria-hidden="true"><b>DATA</b><b>AI</b><b>RULES</b><b>API</b><i>OP<br />SYNQ</i></div>
       </section>
 
       <section className="locale-proof">
@@ -137,7 +135,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="shell market-industries-grid">
           <div><div className="kicker">ENGLISH-LANGUAGE NORDIC MARKETS</div><h2>Built remotely for growing European companies.</h2></div>
           <div>
-            <p>We target decision makers in the Netherlands, Norway, Sweden and Denmark. Every project remains unique to the client's workflow; market pages provide local context without pretending to be a generic local SaaS product.</p>
+            <p>We target decision makers in the Netherlands, Norway, Sweden and Denmark. Every project remains unique to the client&apos;s workflow; market pages provide local context without pretending to be a generic local SaaS product.</p>
             <div className="text-link-grid">{marketLinks.map((market) => <Link href={market.href} key={market.href}>{service.name} in {market.label} ↗</Link>)}</div>
           </div>
         </div>
@@ -153,9 +151,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div>{relatedServices.map((related) => <Link href={related.href} key={related.href}>{related.label}<span>↗</span></Link>)}</div>
       </section>
 
-      <section className="locale-cta"><div className="shell"><h2>Map the right {service.name.toLowerCase()} solution.</h2><p>Show us the workflows, spreadsheets and disconnected systems creating operational friction. We will identify a practical first implementation.</p><Link className="button primary" href="/#contact">Book a strategy call <span>↗</span></Link><small>Remote discovery · Netherlands · Norway · Sweden · Denmark</small></div></section>
+      <section className="locale-cta"><div className="shell"><h2>Map the right {service.name.toLowerCase()} solution.</h2><p>Show us the workflows, spreadsheets and disconnected systems creating operational friction. We will identify a practical first implementation.</p><Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link><small>Remote discovery · Netherlands · Norway · Sweden · Denmark</small></div></section>
 
-      <footer><div className="shell footer-bottom"><span>© 2026 NORTH/OS</span><span>Premium Business Automation Studio</span><Link href="/">Main website ↗</Link></div></footer>
+      <SiteFooter />
     </main>
   );
 }

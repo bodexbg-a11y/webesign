@@ -2,11 +2,21 @@ import type { MetadataRoute } from "next";
 import { SITE_URL, marketAlternates, markets, services } from "./seo-data";
 
 const solutionPaths = [
-  "/solutions/construction-os",
   "/solutions/manufacturing-os",
   "/solutions/distribution-os",
   "/solutions/logistics-os",
   "/solutions/property-management-os",
+];
+
+const primaryPaths = [
+  "/construction-os",
+  "/solutions",
+  "/about",
+  "/contact",
+  "/privacy",
+  "/cookies",
+  "/terms",
+  "/legal",
 ];
 
 const lastModified = new Date("2026-08-07");
@@ -32,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: alternates },
   }));
 
+  const primaryPages: MetadataRoute.Sitemap = primaryPaths.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency: path === "/construction-os" || path === "/solutions" ? "weekly" : "monthly",
+    priority: path === "/construction-os" ? 0.95 : path === "/solutions" ? 0.9 : 0.6,
+  }));
+
   const servicePages: MetadataRoute.Sitemap = Object.keys(services).map((slug) => ({
     url: `${SITE_URL}/services/${slug}`,
     lastModified,
@@ -46,5 +63,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...home, ...marketPages, ...servicePages, ...solutionPages];
+  return [...home, ...primaryPages, ...marketPages, ...servicePages, ...solutionPages];
 }

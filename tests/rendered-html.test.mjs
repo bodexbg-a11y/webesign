@@ -13,17 +13,17 @@ async function render(path = "/") {
   );
 }
 
-test("server-renders the finished NORTH/OS homepage", async () => {
+test("server-renders the finished OPSYNQ homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
   assert.match(html, /<title>Business Operating System/i);
-  assert.match(html, /Custom Business/);
-  assert.match(html, /Operating Systems/);
+  assert.match(html, /OPSYNQ/);
+  assert.match(html, /The operating system/i);
   assert.match(html, /application\/ld\+json/i);
-  assert.match(html, /Book free strategy call/i);
+  assert.match(html, /Book a demo/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });
 
@@ -35,7 +35,14 @@ test("renders priority market, service and industry landing pages", async () => 
     ["/da", /Business automation software for Danish companies/i],
     ["/services/custom-crm-development", /custom CRM development/i],
     ["/services/workflow-automation", /workflow automation/i],
-    ["/solutions/construction-os", /construction management software/i],
+    ["/construction-os", /construction management software/i],
+    ["/solutions", /modular business operating system/i],
+    ["/about", /Business Systems Architect/i],
+    ["/contact", /Book a demo/i],
+    ["/privacy", /Privacy Policy/i],
+    ["/cookies", /Cookie Policy/i],
+    ["/terms", /Terms of Use/i],
+    ["/legal", /Legal Notice/i],
   ];
 
   for (const [path, expected] of pages) {
