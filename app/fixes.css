@@ -1,9 +1,0 @@
-.check-grid input {
-  width: 1px !important;
-  height: 1px !important;
-  left: 0;
-  top: 0;
-}
-
-.hero-main { min-width: 0; }
-.hero-main > p { max-width: 520px; }
