@@ -48,6 +48,17 @@ const capabilities = [
   ["AI automation", "AI assistants and agents that classify, prepare, summarise and act inside controlled business workflows.", "/services/ai-business-automation"],
 ];
 
+const verticalCrmFeatures = [
+  ["Facebook lead capture", "New enquiries enter the CRM with campaign source, contact details and arrival time ready for manager follow-up."],
+  ["Technical project brief", "Area, problem, materials, services, photos, answers and site requirements become one structured object record."],
+  ["Quotation calculator", "Calculate material consumption, reserve, margin and delivery before generating a controlled commercial offer."],
+  ["Manager SLA control", "Track first contact, response speed, fresh comments, daily tasks and deals that need immediate attention."],
+  ["Contractors & documents", "Connect the customer, project, contractor, quotation, invoice, files and delivery activity in one history."],
+  ["Executive sales dashboard", "See leads, response time, quotations, payments, win rate and reasons for lost deals by manager and source."],
+];
+
+const crmStages = ["New lead", "Brief", "Quotation", "Negotiation", "Invoice", "Paid / delivery"];
+
 const industries = [
   ["Construction", "Leads, estimates, sites, crews, subcontractors, costs and variations.", "/construction-os"],
   ["Manufacturing", "Orders, production, materials, quality, capacity and operational reporting.", "/solutions/manufacturing-os"],
@@ -148,6 +159,34 @@ export default function Home() {
       <section className="home-capabilities" id="capabilities">
         <div className="shell compact-heading"><div><div className="kicker">ONE PLATFORM / THE WHOLE OPERATION</div><h2>Everything your teams need.<br /><em>Connected by design.</em></h2></div><p>Build the modules that matter now and expand when the next bottleneck appears. Every part shares the same data, permissions and business logic.</p></div>
         <div className="shell capability-grid">{capabilities.map(([title, text, href], index) => <Link href={href} key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div><i>↗</i></Link>)}</div>
+      </section>
+
+      <section className="vertical-crm-showcase" aria-labelledby="vertical-crm-title">
+        <div className="shell vertical-crm-heading">
+          <div><div className="kicker">REAL-WORLD BUSINESS OS EXAMPLE</div><h2 id="vertical-crm-title">From Facebook lead<br /><em>to paid construction order.</em></h2></div>
+          <div><p>OPSYNQ can become a vertical construction CRM for material suppliers—not just a place to store contacts, but the complete sales and project workflow from first response to quotation, invoice and delivery.</p><span>Illustrative demo workspace · No real customer data</span></div>
+        </div>
+
+        <div className="shell vertical-crm-ui" aria-label="Illustrative construction CRM workflow">
+          <header><div><span>CONSTRUCTION SALES OS</span><h3>Project opportunity #2048</h3></div><div className="crm-demo-label">DEMO WORKSPACE</div></header>
+          <div className="crm-stage-row">{crmStages.map((stage, index) => <div className={index < 3 ? "complete" : index === 3 ? "active" : ""} key={stage}><i>{index < 3 ? "✓" : index + 1}</i><span>{stage}</span></div>)}</div>
+          <div className="crm-ui-grid">
+            <div className="crm-project-card">
+              <div className="crm-card-title"><div><small>PROJECT BRIEF</small><b>Northwind Warehouse</b></div><span>Updated 8 min ago</span></div>
+              <div className="crm-project-metrics"><div><small>Lead source</small><b>Meta Lead Ads</b></div><div><small>First response</small><b>06 min</b></div><div><small>Project area</small><b>1,240 m²</b></div><div><small>Quote value</small><b>€28,460</b></div></div>
+              <div className="crm-brief-table"><div><span>Application</span><b>Roof insulation</b></div><div><span>Material</span><b>PIR 120 mm</b></div><div><span>Reserve</span><b>8% included</b></div><div><span>Delivery</span><b>Oslo · Week 36</b></div></div>
+            </div>
+            <aside className="crm-activity-card">
+              <div className="crm-card-title"><div><small>MANAGER CONTROL</small><b>Next best actions</b></div><i /> </div>
+              <div className="crm-sla"><span>SLA STATUS</span><b>On track</b><small>First response target: 15 min</small></div>
+              <div className="crm-activity-list"><div><i>01</i><span><b>Confirm delivery access</b><small>Due today · Alex K.</small></span></div><div><i>02</i><span><b>Update contractor price</b><small>Waiting for supplier</small></span></div><div><i>03</i><span><b>Schedule quotation follow-up</b><small>Tomorrow · 10:30</small></span></div></div>
+              <div className="crm-quote-action" aria-hidden="true">Prepare quotation <span>↗</span></div>
+            </aside>
+          </div>
+        </div>
+
+        <div className="shell vertical-crm-feature-grid">{verticalCrmFeatures.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div className="shell vertical-crm-cta"><div><b>Customer → project → contractor → quotation → invoice → logistics</b><p>One visible sales process for managers, technical teams and leadership.</p></div><Link className="button primary" href="/construction-os">Explore Construction OS <span>↗</span></Link></div>
       </section>
 
       <section className="home-flow">
