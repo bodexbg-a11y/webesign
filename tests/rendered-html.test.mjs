@@ -1,5 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readdir, readFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -50,4 +55,14 @@ test("renders priority market, service and industry landing pages", async () => 
     assert.equal(response.status, 200, path);
     assert.match(await response.text(), expected, path);
   }
+});
+
+test("ships the critical desktop design rules", async () => {
+  const cssDirectory = join(projectRoot, "dist/client/_next/static/css");
+  const cssFiles = (await readdir(cssDirectory)).filter((file) => file.endsWith(".css"));
+  assert.ok(cssFiles.length > 0, "compiled stylesheet is missing");
+  const css = (await Promise.all(cssFiles.map((file) => readFile(join(cssDirectory, file), "utf8")))).join("\n");
+  assert.match(css, /background:var\(--ink\)/, "global dark theme is missing");
+  assert.match(css, /\.hero\{[^}]*min-height:780px/, "desktop hero layout is missing");
+  assert.match(css, /\.nav\{[^}]*height:86px/, "desktop navigation layout is missing");
 });
