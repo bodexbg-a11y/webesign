@@ -1,3 +1,5 @@
+.locale-page, main { --font-geist-sans:"Helvetica Neue",Helvetica,Arial,sans-serif; --font-geist-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace; }
+
 .one-system {
   padding: 125px 0;
   background: #0c0e11;
