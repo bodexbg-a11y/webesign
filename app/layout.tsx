@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   category: "business software",
   creator: "OPSYNQ",
   publisher: "OPSYNQ",
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "256x256" }],
+    shortcut: "/favicon.png",
+    apple: [{ url: "/favicon.png", type: "image/png", sizes: "256x256" }],
+  },
   openGraph: { title: "OPSYNQ — Business Operating Systems", description: "One connected platform for your entire business: CRM, operations, employees, finance, documents, integrations and AI.", type: "website", url: SITE_URL, siteName: "OPSYNQ", images: [{ url: "/og.png", width: 1731, height: 909, alt: "OPSYNQ Business Operating System" }] },
   twitter: { card: "summary_large_image", title: "OPSYNQ — Business Operating Systems", description: "Everything that runs your business. Connected.", images: ["/og.png"] },
 };
