@@ -33,7 +33,7 @@ const benefits = [
 
 const industries = ["Construction", "Manufacturing", "Healthcare", "Logistics", "Real Estate", "Wholesale", "Professional Services", "E-commerce"];
 const process = ["Discovery", "Business Analysis", "UX/UI Design", "Development", "Integration", "Launch", "Continuous Improvement"];
-const integrations = ["OpenAI", "Stripe", "Google Workspace", "Microsoft 365", "Telegram", "WhatsApp", "Any API"];
+const integrations = ["Google Ads", "Meta / Facebook", "Excel", "Google Workspace", "Microsoft 365", "OpenAI", "Your databases", "Any API"];
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="hero-copy">
           <div className="eyebrow"><i /> Bespoke systems for serious operations</div>
           <h1>Custom Business<br/><em>Operating Systems.</em></h1>
-          <p>We design and develop fully customized platforms that automate your entire business. CRM, operations, finance, documents, AI automation, dashboards and integrations—all inside one system.</p>
+          <p>We design one unique platform around your business—not another tool you have to adapt to. Management, employees, activity, CRM, operations, finance, advertising, documents, data, AI and integrations—all inside one system.</p>
           <div className="actions"><a className="button primary" href="#contact">Book free strategy call <span>↗</span></a><a className="button ghost" href="#platform">Watch demo <span className="play">▶</span></a></div>
           <div className="hero-note"><span>Built for companies with 10–500+ employees</span><span>Projects from €5k to enterprise</span></div>
         </div>
@@ -72,6 +72,12 @@ export default function Home() {
 
       <section className="trust"><div className="shell trust-inner"><span>One system replaces</span>{["SPREADSHEETS","DISCONNECTED CRM","MANUAL REPORTS","DATA SILOS","REPETITIVE ADMIN"].map(x=><b key={x}>{x}</b>)}</div></section>
 
+      <section className="one-system"><div className="shell one-system-grid">
+        <div><div className="kicker">ONE BUSINESS / ONE SYSTEM</div><h2>Everything your company does.<br/><em>Working as one.</em></h2></div>
+        <div className="one-system-copy"><p>Your Business OS becomes the single place where leadership sees the full picture and every employee gets exactly the tools, information, and next actions they need.</p><p>We connect your advertising, sales, operations, people, finance, files, spreadsheets, and private databases into one custom solution—with automation running across the entire business.</p></div>
+        <div className="system-flow" aria-label="Connected business functions"><span>Advertising<small>Google · Facebook</small></span><i>→</i><span>Sales<small>Leads · CRM</small></span><i>→</i><span>Operations<small>Teams · Activity</small></span><i>→</i><span>Finance<small>Invoices · Reports</small></span><i>→</i><span>Intelligence<small>Dashboards · AI</small></span></div>
+      </div></section>
+
       <section className="light-section" id="about"><div className="shell">
         <div className="section-head"><div><div className="kicker">01 / WHY CUSTOM</div><h2>Software should fit<br/>the business. <em>Precisely.</em></h2></div><p>Off-the-shelf tools solve average problems. We engineer around your real operation—preserving what makes it work and removing everything that slows it down.</p></div>
         <div className="benefit-grid">{benefits.map(([icon,title,text])=><article key={title}><i>{icon}</i><h3>{title}</h3><p>{text}</p></article>)}</div>
@@ -86,7 +92,8 @@ export default function Home() {
 
       <section className="platform-section" id="platform"><div className="shell"><div className="platform-top"><div className="kicker">04 / YOUR CONTROL CENTER</div><h2>Everything that runs<br/>your business. <em>Connected.</em></h2></div>
         <div className="platform-ui"><div className="platform-nav"><b>NORTH<span>/OS</span></b><small>MAIN WORKSPACE</small>{["Overview","CRM","Projects","Finance","Inventory","Documents","Automations","Analytics"].map((x,i)=><div className={i===0?"selected":""} key={x}><i>{["⌂","◎","▣","€","◇","□","✦","⌁"][i]}</i>{x}{i===6&&<span>12</span>}</div>)}</div><div className="platform-main"><header><div><small>OPERATIONS / OVERVIEW</small><h3>Company overview</h3></div><div className="people"><i>ML</i><i>AK</i><i>+8</i></div></header><div className="platform-metrics"><div><span>Monthly revenue</span><b>€482,680</b><small>↑ 12.4% vs last month</small></div><div><span>Open projects</span><b>38</b><small>92% on schedule</small></div><div><span>Tasks completed</span><b>1,248</b><small>↑ 18% efficiency</small></div><div><span>Outstanding</span><b>€64,200</b><small>8 invoices</small></div></div><div className="lower-grid"><div className="big-graph"><div className="card-head"><div><small>CASH FLOW</small><b>Financial performance</b></div><span>2026⌄</span></div><div className="line-chart"><i className="line one"/><i className="line two"/><i className="line three"/><i className="line four"/><i className="line five"/><i className="line six"/><div className="dot"/></div></div><div className="task-card"><div className="card-head"><div><small>WORKLOAD</small><b>Teams</b></div><span>•••</span></div>{[["Operations",82],["Sales",68],["Finance",54],["Delivery",76]].map(([x,n])=><div className="team" key={String(x)}><span>{x}</span><i><b style={{width:`${n}%`}}/></i><small>{n}%</small></div>)}</div></div></div></div>
-        <div className="integration-row"><span>Connect your entire stack</span>{integrations.map(x=><b key={x}>{x}</b>)}</div>
+        <div className="integration-row"><span>Everything connected</span>{integrations.map(x=><b key={x}>{x}</b>)}</div>
+        <div className="integration-message"><div><span>ADVERTISING TO OPERATIONS</span><h3>Know which campaign created the customer—and what happened next.</h3></div><p>Google Ads and Facebook lead data flows directly into your CRM. Follow every enquiry through sales, delivery, invoicing, and retention without exports, duplicate entry, or blind spots.</p></div>
       </div></section>
 
       <section className="process-section" id="process"><div className="shell"><div className="section-head"><div><div className="kicker">05 / HOW WE WORK</div><h2>From complexity<br/>to <em>clarity.</em></h2></div><p>A rigorous, transparent process that de-risks transformation and delivers usable value at every stage.</p></div><div className="process-list">{process.map((x,i)=><article key={x}><span>0{i+1}</span><i/><h3>{x}</h3><p>{["We map the ambition, constraints, and real business outcomes.","We study how work actually moves across people, tools, and data.","We prototype the experience before committing to build.","Senior engineers deliver secure, maintainable software in clear stages.","Your existing systems become part of one reliable information flow.","We migrate, train, test, and release without operational surprises.","The platform evolves as your organization and advantage grow."][i]}</p></article>)}</div></div></section>
