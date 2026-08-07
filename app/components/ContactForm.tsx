@@ -18,6 +18,7 @@ export default function ContactForm() {
       `Website: ${data.get("website") || ""}`,
       `Employees: ${data.get("company-size") || ""}`,
       `Interest: ${data.get("interest") || ""}`,
+      `Capabilities: ${data.getAll("features").join(", ") || "Not specified"}`,
       "",
       String(data.get("description") || ""),
     ].join("\n"));
@@ -32,6 +33,7 @@ export default function ContactForm() {
       <div className="form-row"><label>Business Email<input type="email" name="email" autoComplete="email" required /></label><label>Phone<input type="tel" name="phone" autoComplete="tel" /></label></div>
       <label>Company Website<input type="url" name="website" placeholder="https://company.com" /></label>
       <div className="form-row"><label>Number of Employees<select name="company-size" required defaultValue=""><option value="" disabled>Select company size</option><option>10–25</option><option>26–50</option><option>51–100</option><option>101–250</option><option>251–500</option><option>500+</option></select></label><label>Primary Interest<select name="interest" required defaultValue=""><option value="" disabled>Select a solution</option><option>Business Operating System</option><option>Construction OS</option><option>Custom CRM</option><option>Workflow Automation</option><option>Custom ERP</option><option>AI Automation</option></select></label></div>
+      <fieldset><legend>What should the system include? <small>(optional)</small></legend><div className="feature-options">{["CRM", "Operations", "Finance", "Documents", "Automation", "AI & integrations"].map((feature) => <label key={feature}><input type="checkbox" name="features" value={feature} /><span>{feature}</span></label>)}</div></fieldset>
       <label>What would you like to automate?<textarea name="description" rows={5} required /></label>
       <label className="consent-check"><input type="checkbox" required /><span>I have read the <Link href="/privacy">Privacy Policy</Link> and consent to OPSYNQ using these details to respond to my enquiry.</span></label>
       <button type="submit">Prepare enquiry <span>↗</span></button>

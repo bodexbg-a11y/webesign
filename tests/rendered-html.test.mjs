@@ -24,11 +24,13 @@ test("server-renders the finished OPSYNQ homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Business Operating System/i);
+  assert.match(html, /<title>Custom Business Operating Systems/i);
   assert.match(html, /OPSYNQ/);
-  assert.match(html, /The operating system/i);
+  assert.match(html, /Custom Business/i);
   assert.match(html, /application\/ld\+json/i);
-  assert.match(html, /Book a demo/i);
+  assert.match(html, /Book a strategy call/i);
+  assert.match(html, /What is a Business Operating System\?/i);
+  assert.match(html, /What would you like to automate\?/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });
 
