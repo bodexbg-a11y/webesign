@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://north-business-os.mew-77.chatgpt.site";
-  return ["", "/nl", "/da", "/no", "/sv", "/ie"].map((path, index) => ({
+  const base = "https://webesign.vercel.app";
+  return ["", "/nl", "/da", "/no", "/sv", "/ie", "/solutions/construction-os", "/solutions/manufacturing-os", "/solutions/distribution-os", "/solutions/logistics-os", "/solutions/property-management-os"].map((path, index) => ({
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: index === 0 ? 1 : .9,
-    alternates: { languages: { en: base, "en-IE": `${base}/ie`, "nl-NL": `${base}/nl`, "da-DK": `${base}/da`, "nb-NO": `${base}/no`, "sv-SE": `${base}/sv` } }
+    alternates: { languages: { en: base, "en-IE": `${base}/ie`, "en-NL": `${base}/nl`, "en-DK": `${base}/da`, "en-NO": `${base}/no`, "en-SE": `${base}/sv` } }
   }));
 }
