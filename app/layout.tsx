@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import ConsentManager from "./components/ConsentManager";
 import { SITE_URL, marketAlternates } from "./seo-data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans-premium", display: "swap" });
+const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={inter.variable}><body>{children}<ConsentManager /></body></html>;
+  return <html lang="en" className={`${inter.variable} ${bricolage.variable}`}><body>{children}<ConsentManager /></body></html>;
 }

@@ -11,7 +11,12 @@
 /* ---- Product-aligned redesign layer: rounded cards, soft shadows, real-product light dashboard ---- */
 
 main{--font-geist-mono:var(--font-geist-sans);--font-geist-sans:var(--font-sans-premium),-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-h1 em,h2 em{font-style:normal;font-weight:340;color:#777b84}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+h1,h2{text-wrap:balance}
+.consent-overlay,.consent-modal{overscroll-behavior:contain}
+h1,h2{font-family:var(--font-display),var(--font-geist-sans)}
+h1 em,h2 em{font-style:normal;font-weight:300;color:#777b84}
 
 /* Buttons */
 .button{border-radius:var(--radius-md);transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
@@ -155,3 +160,14 @@ body:before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opac
 .construction-workflow{background:radial-gradient(850px 480px at 95% 100%,rgba(155,92,240,.09),transparent 55%),#111317}
 .home-consultation{background:radial-gradient(1100px 620px at 85% -10%,rgba(255,255,255,.10),transparent 55%),var(--blue)}
 .crm-flow-card,.faq-grid details,.market-faq details,.advantage-grid>article,.capability-grid>a,.vertical-crm-feature-grid>article,.construction-module-grid>article,.workflow-line>article,.visibility-cards>article,.service-outcome-grid>article{transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
+
+/* Hero: bold centered statement with a large product shot underneath, not another split two-column template */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:76px;padding-bottom:76px;min-height:auto}
+.hero:before{inset:-86px -10% auto -10%;height:640px;background:radial-gradient(900px 480px at 50% 0%,rgba(75,92,227,.22),transparent 60%),radial-gradient(650px 420px at 15% 60%,rgba(155,92,240,.13),transparent 55%),radial-gradient(650px 420px at 85% 60%,rgba(75,92,227,.13),transparent 55%)}
+.hero .eyebrow{display:inline-flex;margin-left:auto;margin-right:auto}
+.hero-copy,.sales-home .hero-copy{max-width:900px;display:flex;flex-direction:column;align-items:center}
+.hero-copy>p,.sales-home .hero-copy>p{max-width:660px;margin:34px auto 31px}
+.hero .actions{justify-content:center}
+.hero .hero-note{justify-content:center}
+.hero .dashboard-wrap{margin-top:68px;transform:none;width:100%;max-width:1180px;animation:none}
+@media(max-width:900px){.hero{padding-top:64px}.hero .dashboard-wrap{margin-top:50px}}

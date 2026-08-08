@@ -1,5 +1,5 @@
 type IconProps = { className?: string };
-const base = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+const base = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": "true" as const };
 
 export function IconLayers(p: IconProps) { return <svg {...base} {...p}><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="M3 12l9 5 9-5" /><path d="M3 16l9 5 9-5" /></svg>; }
 export function IconRoute(p: IconProps) { return <svg {...base} {...p}><circle cx="6" cy="6" r="2.4" /><circle cx="18" cy="18" r="2.4" /><path d="M8.2 7.3 12 12l3.8 3" /></svg>; }
