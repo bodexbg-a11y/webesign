@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 import DashboardPreview from "./components/DashboardPreview";
 import Link from "./components/SafeLink";
@@ -58,6 +59,36 @@ const verticalCrmFeatures = [
 ];
 
 const crmStages = ["New lead", "Brief", "Quotation", "Negotiation", "Invoice", "Paid / delivery"];
+
+const productScreens = [
+  {
+    src: "/product/ai-assistant.jpg",
+    width: 2200,
+    height: 1204,
+    label: "AI ASSISTANT",
+    title: "Ask the operation directly.",
+    text: "Analyse projects, invoices, teams and schedules through a controlled assistant connected to company data.",
+    alt: "OPSYNQ Construction OS AI Assistant interface with project and finance questions",
+  },
+  {
+    src: "/product/construction-teams.jpg",
+    width: 2200,
+    height: 1203,
+    label: "WORKFORCE CONTROL",
+    title: "See every crew and assignment.",
+    text: "Track availability, foremen, performance, hours, incidents and the active project for every construction team.",
+    alt: "OPSYNQ Construction OS teams dashboard showing crews, performance and active projects",
+  },
+  {
+    src: "/product/subcontractors.jpg",
+    width: 2200,
+    height: 1200,
+    label: "SUBCONTRACTOR NETWORK",
+    title: "Control trade partners in one place.",
+    text: "Manage specialties, ratings, contacts, completed work, invoiced value and current project assignments.",
+    alt: "OPSYNQ Construction OS subcontractor management interface",
+  },
+];
 
 const industries = [
   ["Construction", "Leads, estimates, sites, crews, subcontractors, costs and variations.", "/construction-os"],
@@ -187,6 +218,18 @@ export default function Home() {
 
         <div className="shell vertical-crm-feature-grid">{verticalCrmFeatures.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
         <div className="shell vertical-crm-cta"><div><b>Customer → project → contractor → quotation → invoice → logistics</b><p>One visible sales process for managers, technical teams and leadership.</p></div><Link className="button primary" href="/construction-os">Explore Construction OS <span>↗</span></Link></div>
+      </section>
+
+      <section className="real-product-showcase" aria-labelledby="real-product-title">
+        <div className="shell real-product-heading"><div><div className="kicker">INSIDE THE ACTUAL PRODUCT</div><h2 id="real-product-title">Construction OS.<br /><em>Built and working.</em></h2></div><div><p>These are real screens from the OPSYNQ product experience—not a stock dashboard or a design concept. Each workspace turns operational data into a clear next decision.</p><span>Actual interface · Demo data shown</span></div></div>
+
+        <figure className="shell product-shot product-shot-featured">
+          <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Executive Dashboard</span><b>LIVE PRODUCT UI</b></div>
+          <div className="product-image-wrap"><Image src="/product/construction-dashboard.jpg" width={2200} height={1206} sizes="(max-width: 900px) 100vw, 1240px" alt="OPSYNQ Construction OS executive dashboard with projects, crews, revenue, profit, invoices and cash position" /></div>
+          <figcaption><div><span>EXECUTIVE CONTROL</span><h3>One view of the entire construction company.</h3></div><p>Projects, delays, tasks, crews, revenue, profit, outstanding invoices and cash position—visible without waiting for manual reporting.</p></figcaption>
+        </figure>
+
+        <div className="shell product-screen-grid">{productScreens.map((screen) => <figure className="product-shot" key={screen.src}><div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ</span></div><div className="product-image-wrap"><Image src={screen.src} width={screen.width} height={screen.height} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 410px" alt={screen.alt} /></div><figcaption><span>{screen.label}</span><h3>{screen.title}</h3><p>{screen.text}</p></figcaption></figure>)}</div>
       </section>
 
       <section className="home-flow">

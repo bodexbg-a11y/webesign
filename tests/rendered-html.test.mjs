@@ -33,6 +33,8 @@ test("server-renders the finished OPSYNQ homepage", async () => {
   assert.match(html, /What would you like to automate\?/i);
   assert.match(html, /From Facebook lead/i);
   assert.match(html, /Manager SLA control/i);
+  assert.match(html, /Inside the actual product/i);
+  assert.match(html, /construction-dashboard\.jpg/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });
 
