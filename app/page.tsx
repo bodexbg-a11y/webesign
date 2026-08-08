@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const frictionTags = ["EXCEL WORKAROUNDS", "DISCONNECTED CRM", "MANUAL APPROVALS", "DUPLICATE DATA", "DELAYED REPORTING"];
+
 const businessProblems = [
   [IconScatter, "01", "Data lives in different places", "Customer details, project updates, documents and financial data are split across spreadsheets and disconnected tools."],
   [IconClock, "02", "Work depends on manual follow-up", "Employees copy information, chase approvals and rebuild the same reports instead of moving the operation forward."],
@@ -187,7 +189,7 @@ export default function Home() {
         <DashboardPreview />
       </section>
 
-      <section className="trust" aria-label="Systems OPSYNQ can replace"><div className="shell trust-inner"><span>Replace operational friction</span>{["EXCEL WORKAROUNDS", "DISCONNECTED CRM", "MANUAL APPROVALS", "DUPLICATE DATA", "DELAYED REPORTING"].map((item) => <b key={item}>{item}</b>)}</div></section>
+      <section className="trust" aria-label="Systems OPSYNQ can replace"><div className="shell trust-inner"><span>Replace operational friction</span><div className="trust-marquee"><div className="trust-track">{[...frictionTags, ...frictionTags].map((item, index) => <b key={`${item}-${index}`} aria-hidden={index >= frictionTags.length}>{item}</b>)}</div></div></div></section>
 
       <section className="home-problem">
         <div className="shell compact-heading"><div><div className="kicker">WHEN THE BUSINESS OUTGROWS ITS TOOLS</div><h2>Growth creates complexity.<br /><em>Your systems should remove it.</em></h2></div><p>More customers, employees and services often mean more spreadsheets, more subscriptions and more manual coordination. A custom Business OS gives the company a dependable operational foundation.</p></div>

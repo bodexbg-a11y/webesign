@@ -31,7 +31,15 @@ h1 em,h2 em{font-style:normal;font-weight:340;color:#777b84}
 .eyebrow{background:rgba(255,255,255,.06);color:#ccd0d8}
 .kicker{display:inline-flex;background:rgba(75,92,227,.12);color:var(--blue)}
 .compact-cta .kicker,.contact-grid .kicker,.consultation-copy .kicker,.locale-cta .kicker{background:rgba(255,255,255,.16);color:#eef2ff}
-.trust-inner b{padding:6px 13px;border-radius:var(--radius-full);border:1px solid var(--card-line-dark);color:#c7cbd3}
+.trust-inner b{padding:6px 13px;border-radius:var(--radius-full);border:1px solid var(--card-line-dark);color:#c7cbd3;white-space:nowrap}
+.trust-inner{overflow:hidden;justify-content:flex-start;gap:28px}
+.trust-inner>span{flex:0 0 auto}
+.trust-marquee{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.trust-track{display:flex;gap:14px;width:max-content;animation:trust-marquee 26s linear infinite}
+.trust-track:hover{animation-play-state:paused}
+@keyframes trust-marquee{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.trust-track{animation:none}}
+@media(max-width:620px){.trust-inner{flex-direction:column;align-items:flex-start;gap:12px;height:auto;padding:18px 0}.trust-marquee{width:100%}}
 .brand-suffix{margin-left:7px;padding:3px 7px;border-radius:6px;background:rgba(75,92,227,.16);color:var(--blue-light);font-size:10px;font-weight:750;letter-spacing:.05em}
 .footer-legal-links{display:flex;gap:18px}
 .footer-legal-links a:hover{color:#fff}
@@ -81,7 +89,7 @@ h1 em,h2 em{font-style:normal;font-weight:340;color:#777b84}
 .pricing-addon .pricing-list li:before{content:"⭐";font-size:11px}
 @media(max-width:900px){.pricing-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.home-pricing{padding:88px 0}.pricing-card{padding:24px}.pricing-list{grid-template-columns:1fr}}
-@media(max-width:620px){.process-sales-list>article,.market-priority-list>article{padding-left:18px;padding-right:18px}}
+@media(max-width:620px){.market-priority-list>article{padding-left:18px;padding-right:18px}}
 
 /* Form fields: bordered rounded inputs instead of bare underlines */
 input:not([type="checkbox"]):not([type="radio"]),textarea,select{border:1px solid #e2e4ea;border-radius:var(--radius-md);padding:12px 14px;margin-top:6px;background:#fff}
@@ -107,9 +115,18 @@ label{margin-bottom:22px}
 .problem-grid,.principles-grid,.approach-grid{border:0;gap:16px}
 .problem-grid>article,.principles-grid>article,.approach-grid>article{border:1px solid var(--card-line);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);transition:box-shadow .2s ease,transform .2s ease}
 .problem-grid>article:hover,.principles-grid>article:hover,.approach-grid>article:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.process-sales-list,.market-priority-list,.integration-cloud{border:0;display:grid;gap:12px}
-.process-sales-list>article,.market-priority-list>article,.integration-cloud>span{border:1px solid var(--card-line);border-radius:var(--radius-md);background:#fff;box-shadow:var(--shadow-sm);padding-left:28px;padding-right:28px}
-.process-sales-list>article:hover,.market-priority-list>article:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);transition:box-shadow .2s ease,transform .2s ease}
+.market-priority-list,.integration-cloud{border:0;display:grid;gap:12px}
+.market-priority-list>article,.integration-cloud>span{border:1px solid var(--card-line);border-radius:var(--radius-md);background:#fff;box-shadow:var(--shadow-sm);padding-left:28px;padding-right:28px}
+.market-priority-list>article:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);transition:box-shadow .2s ease,transform .2s ease}
+
+/* Process/method section as a connected timeline instead of another card grid */
+.process-sales-list{border:0;display:block;position:relative;padding-left:74px}
+.process-sales-list:before{content:"";position:absolute;left:22px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,rgba(75,92,227,.45),rgba(75,92,227,.05))}
+.process-sales-list>article{display:block;position:relative;padding:0 0 46px;border-bottom:0}
+.process-sales-list>article:last-child{padding-bottom:0}
+.process-sales-list>article>span{position:absolute;left:-74px;top:-3px;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid var(--blue);color:var(--blue);display:grid;place-items:center;font-weight:700;font-size:14px;box-shadow:var(--shadow-sm)}
+.process-sales-list h3{margin:0 0 8px}
+@media(max-width:620px){.process-sales-list{padding-left:56px}.process-sales-list:before{left:16px}.process-sales-list>article>span{left:-56px;width:36px;height:36px;font-size:12px}.process-sales-list>article{padding-bottom:34px}}
 
 /* Card grids on dark sections: elevated near-black cards instead of a hairline checkerboard */
 .advantage-grid,.capability-grid,.vertical-crm-feature-grid,.construction-module-grid,.workflow-line,.visibility-cards,.service-outcome-grid{border:0;gap:14px}
@@ -134,5 +151,7 @@ body:before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opac
 .vertical-crm-showcase{background:radial-gradient(950px 600px at 8% 100%,rgba(155,92,240,.11),transparent 55%),radial-gradient(750px 520px at 92% 0%,rgba(75,92,227,.13),transparent 55%),#0d1015}
 .real-product-showcase{background:radial-gradient(1000px 520px at 50% 0%,rgba(75,92,227,.10),transparent 60%),#07090d}
 .home-industries{background:radial-gradient(900px 520px at 100% 0%,rgba(75,92,227,.12),transparent 55%),#111317}
+.home-markets{background:radial-gradient(800px 460px at 8% 100%,rgba(75,92,227,.10),transparent 55%),#0e1116}
+.construction-workflow{background:radial-gradient(850px 480px at 95% 100%,rgba(155,92,240,.09),transparent 55%),#111317}
 .home-consultation{background:radial-gradient(1100px 620px at 85% -10%,rgba(255,255,255,.10),transparent 55%),var(--blue)}
 .crm-flow-card,.faq-grid details,.market-faq details,.advantage-grid>article,.capability-grid>a,.vertical-crm-feature-grid>article,.construction-module-grid>article,.workflow-line>article,.visibility-cards>article,.service-outcome-grid>article{transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
