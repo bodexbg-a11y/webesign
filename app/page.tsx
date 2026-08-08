@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 import DashboardPreview from "./components/DashboardPreview";
+import { IconAlert, IconBolt, IconBox, IconClock, IconCoins, IconExpand, IconFile, IconGrid, IconKanban, IconLayers, IconMegaphone, IconPlug, IconPuzzle, IconRoute, IconScatter, IconShield, IconSparkle, IconUsers } from "./components/Icons";
 import Link from "./components/SafeLink";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
@@ -26,28 +27,28 @@ export const metadata: Metadata = {
 };
 
 const businessProblems = [
-  ["01", "Data lives in different places", "Customer details, project updates, documents and financial data are split across spreadsheets and disconnected tools."],
-  ["02", "Work depends on manual follow-up", "Employees copy information, chase approvals and rebuild the same reports instead of moving the operation forward."],
-  ["03", "Management sees problems too late", "There is no reliable real-time view of workload, delivery, cash flow, margins or accountability."],
-];
+  [IconScatter, "01", "Data lives in different places", "Customer details, project updates, documents and financial data are split across spreadsheets and disconnected tools."],
+  [IconClock, "02", "Work depends on manual follow-up", "Employees copy information, chase approvals and rebuild the same reports instead of moving the operation forward."],
+  [IconAlert, "03", "Management sees problems too late", "There is no reliable real-time view of workload, delivery, cash flow, margins or accountability."],
+] as const;
 
 const advantages = [
-  ["One source of truth", "Customers, operations, employees, finance and documents work from the same structured data."],
-  ["Built around your workflow", "Roles, permissions, stages and business rules reflect how your company actually operates."],
-  ["Automation across departments", "Approvals, tasks, notifications, documents and handoffs move automatically."],
-  ["Connect what you already use", "Google, Meta, Microsoft, accounting systems, existing databases and documented APIs can stay connected."],
-  ["Complete ownership", "Your operating platform becomes a long-term business asset without generic SaaS limitations."],
-  ["Designed to expand", "Start with the operational bottleneck, then add teams, workflows, companies and industry modules."],
-];
+  [IconLayers, "One source of truth", "Customers, operations, employees, finance and documents work from the same structured data."],
+  [IconRoute, "Built around your workflow", "Roles, permissions, stages and business rules reflect how your company actually operates."],
+  [IconBolt, "Automation across departments", "Approvals, tasks, notifications, documents and handoffs move automatically."],
+  [IconPlug, "Connect what you already use", "Google, Meta, Microsoft, accounting systems, existing databases and documented APIs can stay connected."],
+  [IconShield, "Complete ownership", "Your operating platform becomes a long-term business asset without generic SaaS limitations."],
+  [IconExpand, "Designed to expand", "Start with the operational bottleneck, then add teams, workflows, companies and industry modules."],
+] as const;
 
 const capabilities = [
-  ["Custom CRM", "Leads, customers, pipelines, communication and commercial activity in one tailored workspace.", "/services/custom-crm-development"],
-  ["Operations & projects", "Projects, tasks, responsibilities, deadlines, approvals and delivery workflows connected end to end.", "/solutions"],
-  ["Finance & reporting", "Invoices, costs, margins, forecasts and management dashboards built around the decisions you make.", "/services/custom-erp-development"],
-  ["Documents & approvals", "Generate, route, sign, store and retrieve business documents without manual duplication.", "/services/workflow-automation"],
-  ["ERP & inventory", "Custom ERP, purchasing, warehouse, inventory, production and logistics modules where required.", "/services/custom-erp-development"],
-  ["AI automation", "AI assistants and agents that classify, prepare, summarise and act inside controlled business workflows.", "/services/ai-business-automation"],
-];
+  [IconUsers, "Custom CRM", "Leads, customers, pipelines, communication and commercial activity in one tailored workspace.", "/services/custom-crm-development"],
+  [IconKanban, "Operations & projects", "Projects, tasks, responsibilities, deadlines, approvals and delivery workflows connected end to end.", "/solutions"],
+  [IconCoins, "Finance & reporting", "Invoices, costs, margins, forecasts and management dashboards built around the decisions you make.", "/services/custom-erp-development"],
+  [IconFile, "Documents & approvals", "Generate, route, sign, store and retrieve business documents without manual duplication.", "/services/workflow-automation"],
+  [IconBox, "ERP & inventory", "Custom ERP, purchasing, warehouse, inventory, production and logistics modules where required.", "/services/custom-erp-development"],
+  [IconSparkle, "AI automation", "AI assistants and agents that classify, prepare, summarise and act inside controlled business workflows.", "/services/ai-business-automation"],
+] as const;
 
 const verticalCrmFeatures = [
   ["Facebook lead capture", "New enquiries enter the CRM with campaign source, contact details and arrival time ready for manager follow-up."],
@@ -190,17 +191,17 @@ export default function Home() {
 
       <section className="home-problem">
         <div className="shell compact-heading"><div><div className="kicker">WHEN THE BUSINESS OUTGROWS ITS TOOLS</div><h2>Growth creates complexity.<br /><em>Your systems should remove it.</em></h2></div><p>More customers, employees and services often mean more spreadsheets, more subscriptions and more manual coordination. A custom Business OS gives the company a dependable operational foundation.</p></div>
-        <div className="shell problem-grid">{businessProblems.map(([number, title, text]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div className="shell problem-grid">{businessProblems.map(([Icon, number, title, text]) => <article key={title}><div className="card-icon-row"><span className="card-icon"><Icon /></span><span>{number}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="home-advantages">
         <div className="shell compact-heading"><div><div className="kicker">WHY OPSYNQ</div><h2>A system designed<br /><em>for the business you run.</em></h2></div><p>Not development hours. Not another off-the-shelf subscription. OPSYNQ delivers a business management platform that becomes part of how your company operates and improves.</p></div>
-        <div className="shell advantage-grid">{advantages.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div className="shell advantage-grid">{advantages.map(([Icon, title, text], index) => <article key={title}><div className="card-icon-row"><span className="card-icon"><Icon /></span><span>0{index + 1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="home-capabilities" id="capabilities">
         <div className="shell compact-heading"><div><div className="kicker">ONE PLATFORM / THE WHOLE OPERATION</div><h2>Everything your teams need.<br /><em>Connected by design.</em></h2></div><p>Build the modules that matter now and expand when the next bottleneck appears. Every part shares the same data, permissions and business logic.</p></div>
-        <div className="shell capability-grid">{capabilities.map(([title, text, href], index) => <Link href={href} key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div><i>↗</i></Link>)}</div>
+        <div className="shell capability-grid">{capabilities.map(([Icon, title, text, href]) => <Link href={href} key={title}><span className="card-icon"><Icon /></span><div><h3>{title}</h3><p>{text}</p></div><i>↗</i></Link>)}</div>
       </section>
 
       <section className="vertical-crm-showcase" aria-labelledby="vertical-crm-title">
@@ -233,7 +234,7 @@ export default function Home() {
       <section className="home-flow">
         <div className="shell flow-layout">
           <div><div className="kicker">FROM FIRST CLICK TO MANAGEMENT REPORT</div><h2>One continuous<br /><em>operating flow.</em></h2><p>A lead from Google or Meta can become a customer, project, task plan, document set, invoice and management report—without rebuilding the same information across departments.</p></div>
-          <div className="operating-flow" aria-label="Connected business workflow"><span>Advertising<small>Google · Meta</small></span><i>→</i><span>CRM<small>Lead · Customer</small></span><i>→</i><span>Operations<small>Project · Task</small></span><i>→</i><span>Finance<small>Cost · Invoice</small></span><i>→</i><span>Leadership<small>Dashboard · AI</small></span></div>
+          <div className="operating-flow" aria-label="Connected business workflow"><span><IconMegaphone className="flow-icon" />Advertising<small>Google · Meta</small></span><i>→</i><span><IconUsers className="flow-icon" />CRM<small>Lead · Customer</small></span><i>→</i><span><IconKanban className="flow-icon" />Operations<small>Project · Task</small></span><i>→</i><span><IconCoins className="flow-icon" />Finance<small>Cost · Invoice</small></span><i>→</i><span><IconGrid className="flow-icon" />Leadership<small>Dashboard · AI</small></span></div>
         </div>
         <div className="shell integration-cloud" aria-label="Available integrations">{["Google Ads", "Meta / Facebook", "Excel", "Existing databases", "Google Workspace", "Microsoft 365", "WhatsApp", "Telegram", "Stripe", "Accounting software", "OpenAI", "Any documented API"].map((item) => <span key={item}>{item}<i>+</i></span>)}</div>
       </section>
@@ -265,12 +266,13 @@ export default function Home() {
         <div className="shell compact-heading"><div><div className="kicker">TRANSPARENT PRICING</div><h2>One core platform.<br /><em>Modules you add when ready.</em></h2></div><p>Every implementation starts from the same operating core. Specialised modules are priced and activated separately as the business needs them—each marked with a star in the workspace menu.</p></div>
         <div className="shell pricing-grid">
           <div className="pricing-card pricing-core">
-            <div className="pricing-card-head"><i /><b>Base core</b><span>from €5,000</span></div>
+            <div className="pricing-card-head"><span className="card-icon"><IconGrid /></span><b>Base core</b><span className="pricing-price">from €5,000</span></div>
             <p className="pricing-note">The operating foundation every implementation includes.</p>
             <ul className="pricing-list">{coreModules.map((module) => <li key={module}>{module}</li>)}</ul>
           </div>
+          <div className="pricing-connector" aria-hidden="true">+</div>
           <div className="pricing-card pricing-addon">
-            <div className="pricing-card-head"><i /><b>Add-on modules</b><span>Priced separately</span></div>
+            <div className="pricing-card-head"><span className="card-icon"><IconPuzzle /></span><b>Add-on modules</b><span className="pricing-price">Priced separately</span></div>
             <p className="pricing-note">Sold separately and marked ⭐ in the workspace menu—activate as the operation grows.</p>
             <ul className="pricing-list">{addOnModules.map((module) => <li key={module}>{module}</li>)}</ul>
           </div>

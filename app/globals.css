@@ -52,17 +52,28 @@ h1 em,h2 em{font-style:normal;font-weight:340;color:#777b84}
 @media(max-width:900px){.crm-flow-steps{grid-template-columns:repeat(3,1fr);row-gap:34px}.crm-flow-step:nth-child(3):before{display:none}}
 @media(max-width:620px){.crm-flow-card{padding:28px 20px 24px}.crm-flow-steps{grid-template-columns:1fr 1fr;row-gap:28px}.crm-flow-step:nth-child(2n):before{display:none}}
 
+/* Reusable icon badge used across feature/benefit cards */
+.card-icon{display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;border-radius:11px;background:rgba(75,92,227,.12);color:var(--blue)}
+.card-icon svg{width:21px;height:21px}
+.card-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.problem-grid h3,.advantage-grid h3{margin-top:0}
+.capability-grid>a{align-items:start}
+.flow-icon{display:block;width:20px;height:20px;color:var(--blue);margin-bottom:10px}
+
 /* Core vs. add-on module pricing */
 .home-pricing{padding:128px 0;background:#f6f7fb;color:#111}
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:64px}
 .pricing-card{padding:34px;border:1px solid var(--card-line);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm)}
-.pricing-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--card-line)}
-.pricing-card-head i{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
-.pricing-core .pricing-card-head i{background:var(--blue)}
-.pricing-addon .pricing-card-head i{background:#9b5cf0}
+.pricing-card-head{display:flex;align-items:center;gap:14px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--card-line)}
 .pricing-card-head b{flex:1;font-size:18px;font-weight:600;letter-spacing:-.01em}
-.pricing-card-head span{font-size:20px;font-weight:700;color:var(--blue)}
-.pricing-addon .pricing-card-head span{color:#9b5cf0;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.pricing-price{font-size:20px;font-weight:700;color:var(--blue)}
+.pricing-addon .pricing-price{color:#9b5cf0;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.pricing-addon .card-icon{background:rgba(155,92,240,.12);color:#9b5cf0}
+.pricing-core{background:linear-gradient(165deg,rgba(75,92,227,.06),#fff 42%);border-color:rgba(75,92,227,.18)}
+.pricing-addon{background:linear-gradient(165deg,rgba(155,92,240,.07),#fff 42%);border-color:rgba(155,92,240,.18)}
+.pricing-grid{position:relative;align-items:start}
+.pricing-connector{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--card-line);box-shadow:var(--shadow-md);display:grid;place-items:center;font-size:19px;font-weight:700;color:var(--blue);z-index:2}
+@media(max-width:900px){.pricing-connector{display:none}}
 .pricing-card p.pricing-note{margin:-10px 0 20px;color:#767a82;font-size:12.5px;line-height:1.6}
 .pricing-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;list-style:none;margin:0;padding:0}
 .pricing-list li{display:flex;align-items:baseline;gap:8px;font-size:13.5px;color:#3a3d43}
