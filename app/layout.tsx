@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ConsentManager from "./components/ConsentManager";
 import { SITE_URL, marketAlternates } from "./seo-data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans-premium", display: "swap" });
-const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif-accent", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -27,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}><body>{children}<ConsentManager /></body></html>;
+  return <html lang="en" className={inter.variable}><body>{children}<ConsentManager /></body></html>;
 }

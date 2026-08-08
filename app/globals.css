@@ -11,7 +11,7 @@
 /* ---- Product-aligned redesign layer: rounded cards, soft shadows, real-product light dashboard ---- */
 
 main{--font-geist-mono:var(--font-geist-sans);--font-geist-sans:var(--font-sans-premium),-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-h1 em,h2 em{font-family:var(--font-serif-accent),Georgia,serif;font-style:italic;font-weight:400;color:#9298a3;letter-spacing:-.01em}
+h1 em,h2 em{font-style:normal;font-weight:340;color:#777b84}
 
 /* Buttons */
 .button{border-radius:var(--radius-md);transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
