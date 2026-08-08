@@ -30,6 +30,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: service.description,
       url: `/services/${slug}`,
       type: "website",
+      siteName: "OPSYNQ",
+      images: [{ url: "/og.png", width: 1731, height: 909, alt: `${service.name} | OPSYNQ` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} | OPSYNQ`,
+      description: service.description,
+      images: ["/og.png"],
     },
   };
 }

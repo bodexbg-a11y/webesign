@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: "Custom construction management software and construction CRM for leads, estimates, projects, sites, crews, documents, costs, variations and reporting.",
   keywords: ["construction management software", "construction CRM", "software for construction companies", "construction workflow automation", "custom construction software"],
   alternates: { canonical: "/construction-os" },
-  openGraph: { title: "Construction OS | OPSYNQ", description: "One connected operating system for construction companies.", url: "/construction-os", type: "website" },
+  openGraph: { title: "Construction OS | OPSYNQ", description: "One connected operating system for construction companies.", url: "/construction-os", type: "website", siteName: "OPSYNQ", images: [{ url: "/og.png", width: 1731, height: 909, alt: "OPSYNQ Construction OS" }] },
+  twitter: { card: "summary_large_image", title: "Construction OS | OPSYNQ", description: "One connected operating system for construction companies.", images: ["/og.png"] },
 };
 
 const modules = [

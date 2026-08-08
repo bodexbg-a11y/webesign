@@ -58,7 +58,17 @@ const verticalCrmFeatures = [
   ["Executive sales dashboard", "See leads, response time, quotations, payments, win rate and reasons for lost deals by manager and source."],
 ];
 
-const crmStages = ["New lead", "Brief", "Quotation", "Negotiation", "Invoice", "Paid / delivery"];
+const crmStages = [
+  ["New lead", "Meta Lead Ads — arrives with source & contact"],
+  ["Brief", "Area, materials and photos captured on site"],
+  ["Quotation", "Margin, reserve and delivery calculated"],
+  ["Negotiation", "SLA-tracked manager follow-up"],
+  ["Invoice", "Contract, invoice and delivery date issued"],
+  ["Paid / delivery", "Payment confirmed, logistics scheduled"],
+];
+
+const coreModules = ["Dashboard", "Projects", "Tasks", "Teams", "Employees", "Clients", "Documents", "Notifications", "Settings"];
+const addOnModules = ["AI Assistant", "Scheduling", "Subcontractors", "Marketing (Facebook Ads + Google Ads)", "Equipment", "Warehouse", "Finance", "Reports", "Integrations"];
 
 const productScreens = [
   {
@@ -124,6 +134,7 @@ export default function Home() {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
         name: "OPSYNQ",
+        alternateName: "OPSYNQ OS",
         url: SITE_URL,
         logo: `${SITE_URL}/favicon.png`,
         description: "Premium Business Automation Studio building custom Business Operating Systems for growing companies.",
@@ -198,22 +209,9 @@ export default function Home() {
           <div><p>OPSYNQ can become a vertical construction CRM for material suppliers—not just a place to store contacts, but the complete sales and project workflow from first response to quotation, invoice and delivery.</p><span>Illustrative demo workspace · No real customer data</span></div>
         </div>
 
-        <div className="shell vertical-crm-ui" aria-label="Illustrative construction CRM workflow">
-          <header><div><span>CONSTRUCTION SALES OS</span><h3>Project opportunity #2048</h3></div><div className="crm-demo-label">DEMO WORKSPACE</div></header>
-          <div className="crm-stage-row">{crmStages.map((stage, index) => <div className={index < 3 ? "complete" : index === 3 ? "active" : ""} key={stage}><i>{index < 3 ? "✓" : index + 1}</i><span>{stage}</span></div>)}</div>
-          <div className="crm-ui-grid">
-            <div className="crm-project-card">
-              <div className="crm-card-title"><div><small>PROJECT BRIEF</small><b>Northwind Warehouse</b></div><span>Updated 8 min ago</span></div>
-              <div className="crm-project-metrics"><div><small>Lead source</small><b>Meta Lead Ads</b></div><div><small>First response</small><b>06 min</b></div><div><small>Project area</small><b>1,240 m²</b></div><div><small>Quote value</small><b>€28,460</b></div></div>
-              <div className="crm-brief-table"><div><span>Application</span><b>Roof insulation</b></div><div><span>Material</span><b>PIR 120 mm</b></div><div><span>Reserve</span><b>8% included</b></div><div><span>Delivery</span><b>Oslo · Week 36</b></div></div>
-            </div>
-            <aside className="crm-activity-card">
-              <div className="crm-card-title"><div><small>MANAGER CONTROL</small><b>Next best actions</b></div><i /> </div>
-              <div className="crm-sla"><span>SLA STATUS</span><b>On track</b><small>First response target: 15 min</small></div>
-              <div className="crm-activity-list"><div><i>01</i><span><b>Confirm delivery access</b><small>Due today · Alex K.</small></span></div><div><i>02</i><span><b>Update contractor price</b><small>Waiting for supplier</small></span></div><div><i>03</i><span><b>Schedule quotation follow-up</b><small>Tomorrow · 10:30</small></span></div></div>
-              <div className="crm-quote-action" aria-hidden="true">Prepare quotation <span>↗</span></div>
-            </aside>
-          </div>
+        <div className="shell crm-flow-card" aria-label="Illustrative lead-to-order workflow diagram">
+          <div className="crm-flow-head"><span className="kicker">ILLUSTRATIVE PROCESS DIAGRAM</span><h3>From first enquiry to a paid, delivered order.</h3></div>
+          <div className="crm-flow-steps">{crmStages.map(([stage, detail], index) => <div className={`crm-flow-step ${index < 3 ? "done" : index === 3 ? "current" : ""}`} key={stage}><i>{index < 3 ? "✓" : index + 1}</i><b>{stage}</b><small>{detail}</small></div>)}</div>
         </div>
 
         <div className="shell vertical-crm-feature-grid">{verticalCrmFeatures.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
@@ -261,6 +259,22 @@ export default function Home() {
 
       <section className="home-markets">
         <div className="shell markets-layout"><div><div className="kicker">NORTHERN EUROPE / ENGLISH-LANGUAGE DELIVERY</div><h2>Remote discovery.<br /><em>Serious implementation.</em></h2></div><div><p>OPSYNQ works with decision makers who need practical business automation software, clear ownership and a platform that can evolve with the company.</p><div className="market-links"><Link href="/nl">Netherlands ↗</Link><Link href="/no">Norway ↗</Link><Link href="/sv">Sweden ↗</Link><Link href="/da">Denmark ↗</Link></div></div></div>
+      </section>
+
+      <section className="home-pricing">
+        <div className="shell compact-heading"><div><div className="kicker">TRANSPARENT PRICING</div><h2>One core platform.<br /><em>Modules you add when ready.</em></h2></div><p>Every implementation starts from the same operating core. Specialised modules are priced and activated separately as the business needs them—each marked with a star in the workspace menu.</p></div>
+        <div className="shell pricing-grid">
+          <div className="pricing-card pricing-core">
+            <div className="pricing-card-head"><i /><b>Base core</b><span>from €5,000</span></div>
+            <p className="pricing-note">The operating foundation every implementation includes.</p>
+            <ul className="pricing-list">{coreModules.map((module) => <li key={module}>{module}</li>)}</ul>
+          </div>
+          <div className="pricing-card pricing-addon">
+            <div className="pricing-card-head"><i /><b>Add-on modules</b><span>Priced separately</span></div>
+            <p className="pricing-note">Sold separately and marked ⭐ in the workspace menu—activate as the operation grows.</p>
+            <ul className="pricing-list">{addOnModules.map((module) => <li key={module}>{module}</li>)}</ul>
+          </div>
+        </div>
       </section>
 
       <section className="home-faq">

@@ -68,7 +68,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: `${solution.intro} Built on the OPSYNQ Business Operating System Core.`,
     keywords: [solution.keyword, ...solution.secondary, "business operating system", "workflow automation", "custom business software"],
     alternates: { canonical: `/solutions/${slug}` },
-    openGraph: { title: `${solution.name} | OPSYNQ`, description: solution.intro, url: `/solutions/${slug}`, type: "website" },
+    openGraph: { title: `${solution.name} | OPSYNQ`, description: solution.intro, url: `/solutions/${slug}`, type: "website", siteName: "OPSYNQ", images: [{ url: "/og.png", width: 1731, height: 909, alt: `${solution.name} | OPSYNQ` }] },
+    twitter: { card: "summary_large_image", title: `${solution.name} | OPSYNQ`, description: solution.intro, images: ["/og.png"] },
   };
 }
 

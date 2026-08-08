@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Link from "../components/SafeLink";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
+import { SITE_URL } from "../seo-data";
 
 export const metadata: Metadata = {
   title: "Business OS Solutions & Modules",
   description: "Explore the OPSYNQ Business Operating System architecture: Core, Automation and Advanced industry modules for growing companies.",
   alternates: { canonical: "/solutions" },
+  openGraph: { title: "Business OS Solutions & Modules | OPSYNQ", description: "Explore the OPSYNQ Business Operating System architecture: Core, Automation and Advanced industry modules for growing companies.", url: "/solutions", type: "website", siteName: "OPSYNQ", images: [{ url: "/og.png", width: 1731, height: 909, alt: "OPSYNQ Business OS Solutions" }] },
+  twitter: { card: "summary_large_image", title: "Business OS Solutions & Modules | OPSYNQ", description: "Explore the OPSYNQ Business Operating System architecture: Core, Automation and Advanced industry modules for growing companies.", images: ["/og.png"] },
 };
 
 const layers = [
@@ -28,8 +31,32 @@ const layers = [
 ];
 
 export default function SolutionsPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Solutions", item: `${SITE_URL}/solutions` },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Construction OS", url: `${SITE_URL}/construction-os` },
+          { "@type": "ListItem", position: 2, name: "Manufacturing OS", url: `${SITE_URL}/solutions/manufacturing-os` },
+          { "@type": "ListItem", position: 3, name: "Logistics OS", url: `${SITE_URL}/solutions/logistics-os` },
+          { "@type": "ListItem", position: 4, name: "Distribution OS", url: `${SITE_URL}/solutions/distribution-os` },
+          { "@type": "ListItem", position: 5, name: "Property Management OS", url: `${SITE_URL}/solutions/property-management-os` },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="solutions-page">
+      <script id="solutions-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <SiteHeader />
       <header className="subpage-hero shell"><div className="eyebrow"><i /> MODULAR BUSINESS OPERATING SYSTEM</div><h1>One platform.<br /><em>Three layers of capability.</em></h1><p>Core, Automation and Advanced are not fixed subscription plans. They are a clear architecture for deciding what your business needs now and what the system should support next.</p><div className="actions"><Link className="button primary" href="/contact">Map your system <span>↗</span></Link><Link className="button ghost" href="/construction-os">Construction OS <span>↗</span></Link></div></header>
 

@@ -49,6 +49,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: market.description,
       url: `/${locale}`,
       type: "website",
+      siteName: "OPSYNQ",
+      images: [{ url: "/og.png", width: 1731, height: 909, alt: `OPSYNQ in ${market.country}` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${market.headline} | OPSYNQ`,
+      description: market.description,
+      images: ["/og.png"],
     },
   };
 }

@@ -2,7 +2,7 @@ import Link from "./SafeLink";
 import Image from "next/image";
 
 export function Brand({ href = "/" }: { href?: string }) {
-  return <Link className="brand" href={href} aria-label="OPSYNQ home"><span className="brand-logo" aria-hidden="true"><Image src="/opsynq-logo.png" width={68} height={34} alt="" /></span>OP<span>SYNQ</span></Link>;
+  return <Link className="brand" href={href} aria-label="OPSYNQ OS home"><span className="brand-logo" aria-hidden="true"><Image src="/opsynq-logo.png" width={68} height={34} alt="" /></span>OP<span>SYNQ</span><b className="brand-suffix">OS</b></Link>;
 }
 
 export default function SiteHeader() {

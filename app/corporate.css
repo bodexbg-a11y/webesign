@@ -5,7 +5,7 @@
 .dash-brand-logo { display:block; width:25px; height:25px; overflow:hidden; border-radius:50%; box-shadow:0 0 0 1px rgba(79,134,247,.35); }
 .dash-brand-logo img { display:block; width:50px; height:25px; max-width:none; transform:translateX(-12.5px); }
 .site-footer { background:#07080a; padding:72px 0 26px; }
-.footer-main { display:grid; grid-template-columns:1.35fr repeat(3,1fr); gap:70px; padding-bottom:60px; }
+.footer-main { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:70px; padding-bottom:60px; }
 .footer-main>div { display:flex; flex-direction:column; align-items:flex-start; gap:13px; }
 .footer-main>div:first-child { gap:22px; }
 .footer-main p { max-width:330px; color:#777d87; font-size:13px; line-height:1.7; margin:0; }
