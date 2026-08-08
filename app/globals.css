@@ -56,7 +56,7 @@ h1 em,h2 em{font-style:normal;font-weight:340;color:#777b84}
 .card-icon{display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;border-radius:11px;background:rgba(75,92,227,.12);color:var(--blue)}
 .card-icon svg{width:21px;height:21px}
 .card-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.problem-grid h3,.advantage-grid h3{margin-top:0}
+.problem-grid h3,.advantage-grid h3,.construction-module-grid h3{margin-top:0}
 .capability-grid>a{align-items:start}
 .flow-icon{display:block;width:20px;height:20px;color:var(--blue);margin-bottom:10px}
 

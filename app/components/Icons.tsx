@@ -19,3 +19,10 @@ export function IconSparkle(p: IconProps) { return <svg {...base} {...p}><path d
 export function IconGrid(p: IconProps) { return <svg {...base} {...p}><rect x="3.5" y="3.5" width="7" height="7" rx="1.2" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.2" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.2" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.2" /></svg>; }
 export function IconPuzzle(p: IconProps) { return <svg {...base} {...p}><path d="M9 4h4v2.2a1.8 1.8 0 1 0 0 3.6V12h-3.2a1.8 1.8 0 1 0 0 4H10v4H4v-6h2.2a1.8 1.8 0 1 0 0-4H4V4h5Z" /><path d="M13 12h3.8a1.8 1.8 0 1 1 0-4H20v6h-4v2.2a1.8 1.8 0 1 1-3.6 0V14" /></svg>; }
 export function IconMegaphone(p: IconProps) { return <svg {...base} {...p}><path d="M3 10v4h3l6 4V6l-6 4H3Z" /><path d="M14 9a3.5 3.5 0 0 1 0 6M17 6.5a7 7 0 0 1 0 11" /></svg>; }
+export function IconCrane(p: IconProps) { return <svg {...base} {...p}><path d="M5 21V6l9-3v5" /><path d="M14 8h7M17 8v4.5" /><path d="M17 12.5 12 15" /><path d="M12 15v6M5 21h14" /></svg>; }
+export function IconFactory(p: IconProps) { return <svg {...base} {...p}><path d="M4 21V11l5 3v-3l5 3v-3l4 2.4V21H4Z" /><path d="M8 21v-4M13 21v-4M17.5 21v-4" /></svg>; }
+export function IconTruck(p: IconProps) { return <svg {...base} {...p}><path d="M3 7h10v10H3z" /><path d="M13 10h4l3 3v4h-7z" /><circle cx="7" cy="18.5" r="1.6" /><circle cx="17" cy="18.5" r="1.6" /></svg>; }
+export function IconHome(p: IconProps) { return <svg {...base} {...p}><path d="m4 11 8-7 8 7" /><path d="M6 10v10h12V10" /><path d="M10 20v-6h4v6" /></svg>; }
+export function IconBriefcase(p: IconProps) { return <svg {...base} {...p}><rect x="3" y="7.5" width="18" height="12" rx="1.8" /><path d="M8.5 7.5V5.8A1.8 1.8 0 0 1 10.3 4h3.4a1.8 1.8 0 0 1 1.8 1.8V7.5" /><path d="M3 12.5h18" /></svg>; }
+export function IconClipboard(p: IconProps) { return <svg {...base} {...p}><rect x="5" y="4.5" width="14" height="17" rx="1.8" /><rect x="9" y="3" width="6" height="3" rx="1" /><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4.5" /></svg>; }
+export function IconChart(p: IconProps) { return <svg {...base} {...p}><path d="M4 20V9M11 20V4M18 20v-7" /><path d="M2.5 20h19" /></svg>; }

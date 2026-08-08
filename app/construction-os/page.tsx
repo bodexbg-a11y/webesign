@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "../components/SafeLink";
 import DashboardPreview from "../components/DashboardPreview";
+import { IconChart, IconClipboard, IconCoins, IconFile, IconGrid, IconKanban, IconRoute, IconUsers } from "../components/Icons";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { SITE_URL } from "../seo-data";
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
 };
 
 const modules = [
-  ["Construction CRM", "Capture every enquiry, source, contact, site opportunity and follow-up in a pipeline built around your sales process."],
-  ["Estimates & quotations", "Build controlled scopes, pricing, margin and approval workflows without copying information between spreadsheets."],
-  ["Projects & sites", "Turn an approved opportunity into a live project with milestones, responsibilities, documents and management visibility."],
-  ["Crews & subcontractors", "Coordinate internal teams and external partners with role-based tasks, schedules, requests and activity history."],
-  ["Daily reporting", "Give site teams a focused way to record progress, issues, photos, labour, materials and next actions."],
-  ["Documents & approvals", "Control drawings, contracts, variations, certificates, signatures and version history in the relevant project context."],
-  ["Cost & margin control", "Connect estimates, purchasing, commitments, variations, invoices and actual cost into one operational picture."],
-  ["Client & leadership dashboards", "Provide the right view to customers, project leaders and directors without exposing unrelated internal data."],
-];
+  [IconUsers, "Construction CRM", "Capture every enquiry, source, contact, site opportunity and follow-up in a pipeline built around your sales process."],
+  [IconCoins, "Estimates & quotations", "Build controlled scopes, pricing, margin and approval workflows without copying information between spreadsheets."],
+  [IconKanban, "Projects & sites", "Turn an approved opportunity into a live project with milestones, responsibilities, documents and management visibility."],
+  [IconRoute, "Crews & subcontractors", "Coordinate internal teams and external partners with role-based tasks, schedules, requests and activity history."],
+  [IconClipboard, "Daily reporting", "Give site teams a focused way to record progress, issues, photos, labour, materials and next actions."],
+  [IconFile, "Documents & approvals", "Control drawings, contracts, variations, certificates, signatures and version history in the relevant project context."],
+  [IconChart, "Cost & margin control", "Connect estimates, purchasing, commitments, variations, invoices and actual cost into one operational picture."],
+  [IconGrid, "Client & leadership dashboards", "Provide the right view to customers, project leaders and directors without exposing unrelated internal data."],
+] as const;
 
 const faqs = [
   ["Is Construction OS off-the-shelf construction software?", "No. It is a custom Business Operating System built on the OPSYNQ core and configured around the company's sales, project, site, document and financial workflows."],
@@ -51,7 +52,7 @@ export default function ConstructionOSPage() {
 
       <section className="construction-problem"><div className="shell compact-heading"><div><div className="kicker">THE OPERATIONAL PROBLEM</div><h2>The project is connected.<br /><em>The software usually is not.</em></h2></div><div><p>Leads live in one CRM. Estimates live in Excel. Site updates arrive through WhatsApp. Documents sit in folders. Cost information reaches management after the decision has already been made.</p><p>Construction OS creates one operational record from the first enquiry through handover—without forcing every role into the same complicated interface.</p></div></div></section>
 
-      <section className="construction-modules shell" id="modules"><div className="compact-heading"><div><div className="kicker">ONE CONSTRUCTION OPERATING SYSTEM</div><h2>Every stage visible.<br /><em>Every handoff controlled.</em></h2></div><p>Modules share customers, projects, permissions, documents and reporting. The system can begin with one high-value process and expand across the company.</p></div><div className="construction-module-grid">{modules.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+      <section className="construction-modules shell" id="modules"><div className="compact-heading"><div><div className="kicker">ONE CONSTRUCTION OPERATING SYSTEM</div><h2>Every stage visible.<br /><em>Every handoff controlled.</em></h2></div><p>Modules share customers, projects, permissions, documents and reporting. The system can begin with one high-value process and expand across the company.</p></div><div className="construction-module-grid">{modules.map(([Icon, title, text], index) => <article key={title}><div className="card-icon-row"><span className="card-icon"><Icon /></span><span>0{index + 1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
       <section className="construction-workflow"><div className="shell"><div className="kicker">CONNECTED PROJECT LIFECYCLE</div><h2>Commercial, operational and financial data move together.</h2><div className="workflow-line">{[["01","Enquiry","Source, client and opportunity"],["02","Estimate","Scope, price and margin"],["03","Contract","Approval and documents"],["04","Delivery","Site, team and progress"],["05","Control","Cost, variation and risk"],["06","Handover","Completion and reporting"]].map(([number,title,text])=><article key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 import DashboardPreview from "./components/DashboardPreview";
-import { IconAlert, IconBolt, IconBox, IconClock, IconCoins, IconExpand, IconFile, IconGrid, IconKanban, IconLayers, IconMegaphone, IconPlug, IconPuzzle, IconRoute, IconScatter, IconShield, IconSparkle, IconUsers } from "./components/Icons";
+import { IconAlert, IconBolt, IconBox, IconBriefcase, IconClock, IconCoins, IconCrane, IconExpand, IconFactory, IconFile, IconGrid, IconHome, IconKanban, IconLayers, IconMegaphone, IconPlug, IconPuzzle, IconRoute, IconScatter, IconShield, IconSparkle, IconTruck, IconUsers } from "./components/Icons";
 import Link from "./components/SafeLink";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
@@ -102,13 +102,13 @@ const productScreens = [
 ];
 
 const industries = [
-  ["Construction", "Leads, estimates, sites, crews, subcontractors, costs and variations.", "/construction-os"],
-  ["Manufacturing", "Orders, production, materials, quality, capacity and operational reporting.", "/solutions/manufacturing-os"],
-  ["Distribution & wholesale", "Customers, pricing, stock, purchasing, fulfilment and margin control.", "/solutions/distribution-os"],
-  ["Logistics", "Orders, dispatch, fleet workflows, documents, costs and delivery visibility.", "/solutions/logistics-os"],
-  ["Property management", "Properties, tenants, maintenance, documents, payments and portfolio reporting.", "/solutions/property-management-os"],
-  ["Professional services", "Sales, client onboarding, delivery, utilisation, billing and account visibility.", "/contact"],
-];
+  [IconCrane, "Construction", "Leads, estimates, sites, crews, subcontractors, costs and variations.", "/construction-os"],
+  [IconFactory, "Manufacturing", "Orders, production, materials, quality, capacity and operational reporting.", "/solutions/manufacturing-os"],
+  [IconBox, "Distribution & wholesale", "Customers, pricing, stock, purchasing, fulfilment and margin control.", "/solutions/distribution-os"],
+  [IconTruck, "Logistics", "Orders, dispatch, fleet workflows, documents, costs and delivery visibility.", "/solutions/logistics-os"],
+  [IconHome, "Property management", "Properties, tenants, maintenance, documents, payments and portfolio reporting.", "/solutions/property-management-os"],
+  [IconBriefcase, "Professional services", "Sales, client onboarding, delivery, utilisation, billing and account visibility.", "/contact"],
+] as const;
 
 const process = [
   ["01", "Discovery", "We identify the operational bottleneck, commercial goal and systems already in place."],
@@ -242,7 +242,7 @@ export default function Home() {
       <section className="home-industries">
         <div className="shell industries-layout">
           <div className="industries-intro"><div className="kicker">INDUSTRY OPERATING SYSTEMS</div><h2>Built for the reality<br /><em>of your operation.</em></h2><p>The same Business OS foundation is configured around each company’s terminology, roles, compliance needs and competitive workflows.</p><Link href="/solutions">Explore all industry solutions ↗</Link></div>
-          <div className="industry-sales-list">{industries.map(([title, text, href], index) => <Link href={href} key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div><i>↗</i></Link>)}</div>
+          <div className="industry-sales-list">{industries.map(([Icon, title, text, href]) => <Link href={href} key={title}><span className="card-icon"><Icon /></span><div><h3>{title}</h3><p>{text}</p></div><i>↗</i></Link>)}</div>
         </div>
       </section>
 
