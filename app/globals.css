@@ -31,11 +31,10 @@ h1 em,h2 em{font-style:normal;font-weight:300;color:#777b84}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(75,92,227,.7)}
 .nav-cta span{color:#fff;margin-left:0}
 
-/* Eyebrow / kicker as soft pill badges instead of mono hairline text */
-.eyebrow,.kicker{border-radius:var(--radius-full);letter-spacing:.04em;font-size:11px;padding:7px 14px}
-.eyebrow{background:rgba(255,255,255,.06);color:#ccd0d8}
-.kicker{display:inline-flex;background:rgba(75,92,227,.12);color:var(--blue)}
-.compact-cta .kicker,.contact-grid .kicker,.consultation-copy .kicker,.locale-cta .kicker{background:rgba(255,255,255,.16);color:#eef2ff}
+/* Eyebrow stays a pill (appears once per page); kicker is now a plain label, not a pill repeated in every section */
+.eyebrow{border-radius:var(--radius-full);letter-spacing:.04em;font-size:11px;padding:7px 14px;background:rgba(255,255,255,.06);color:#ccd0d8}
+.kicker{display:inline-block;background:none;padding:0;border-radius:0;letter-spacing:.1em;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--blue)}
+.compact-cta .kicker,.contact-grid .kicker,.consultation-copy .kicker,.locale-cta .kicker{background:none;color:#c9d8ff}
 .trust-inner b{padding:6px 13px;border-radius:var(--radius-full);border:1px solid var(--card-line-dark);color:#c7cbd3;white-space:nowrap}
 .trust-inner{overflow:hidden;justify-content:flex-start;gap:28px}
 .trust-inner>span{flex:0 0 auto}
@@ -65,9 +64,9 @@ h1 em,h2 em{font-style:normal;font-weight:300;color:#777b84}
 @media(max-width:900px){.crm-flow-steps{grid-template-columns:repeat(3,1fr);row-gap:34px}.crm-flow-step:nth-child(3):before{display:none}}
 @media(max-width:620px){.crm-flow-card{padding:28px 20px 24px}.crm-flow-steps{grid-template-columns:1fr 1fr;row-gap:28px}.crm-flow-step:nth-child(2n):before{display:none}}
 
-/* Reusable icon badge used across feature/benefit cards */
-.card-icon{display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;border-radius:11px;background:rgba(75,92,227,.12);color:var(--blue)}
-.card-icon svg{width:21px;height:21px}
+/* Icon used across feature/benefit cards: plain colored mark, no background chip */
+.card-icon{display:grid;place-items:center;width:32px;height:32px;flex:0 0 auto;color:var(--blue)}
+.card-icon svg{width:27px;height:27px}
 .card-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
 .problem-grid h3,.advantage-grid h3,.construction-module-grid h3{margin-top:0}
 .capability-grid>a{align-items:start}
@@ -82,7 +81,7 @@ h1 em,h2 em{font-style:normal;font-weight:300;color:#777b84}
 .pricing-card-head b{flex:1;font-size:18px;font-weight:600;letter-spacing:-.01em}
 .pricing-price{font-size:20px;font-weight:700;color:var(--blue)}
 .pricing-addon .pricing-price{color:#9b5cf0;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.pricing-addon .card-icon{background:rgba(155,92,240,.12);color:#9b5cf0}
+.pricing-addon .card-icon{color:#9b5cf0}
 .pricing-core{background:linear-gradient(165deg,rgba(75,92,227,.06),#fff 42%);border-color:rgba(75,92,227,.18)}
 .pricing-addon{background:linear-gradient(165deg,rgba(155,92,240,.07),#fff 42%);border-color:rgba(155,92,240,.18)}
 .pricing-grid{position:relative;align-items:stretch}
@@ -148,6 +147,13 @@ label{margin-bottom:22px}
 .faq-grid details[open],.market-faq details[open]{background:#161a24}
 
 @media(max-width:620px){.problem-grid,.principles-grid,.approach-grid,.advantage-grid,.capability-grid,.vertical-crm-feature-grid{gap:12px}}
+
+/* Tighten vertical rhythm — the page had 15 sections each padded to 128-132px, making it feel bloated */
+.home-problem,.home-advantages,.home-capabilities,.vertical-crm-showcase,.real-product-showcase,.home-flow,.home-industries,.home-process,.home-faq,.home-consultation,.home-pricing,.home-markets,.construction-feature{padding:92px 0}
+.problem-grid,.advantage-grid,.capability-grid,.principles-grid{margin-top:48px}
+.vertical-crm-feature-grid,.construction-module-grid,.workflow-line,.visibility-cards,.service-outcome-grid{margin-top:48px}
+.pricing-grid{margin-top:44px}
+.crm-flow-card{margin-top:44px}
 
 /* Ambient gradient mesh + film grain for depth on dark sections */
 body{position:relative}
