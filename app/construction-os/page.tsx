@@ -55,7 +55,7 @@ export default function ConstructionOSPage() {
         <figure className="shell product-shot">
           <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Product Walkthrough</span><b>VIDEO OVERVIEW</b></div>
           {/* eslint-disable-next-line jsx-a11y/media-has-caption -- promotional b-roll, no transcript available to caption */}
-          <video className="construction-video-player" controls preload="none" poster="/video/construction-os-overview-poster.jpg" width={1920} height={1080} playsInline>
+          <video className="product-video" controls preload="none" poster="/video/construction-os-overview-poster.jpg" width={1920} height={1080} playsInline>
             <source src="/video/construction-os-overview.mp4" type="video/mp4" />
           </video>
         </figure>

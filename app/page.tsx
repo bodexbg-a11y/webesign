@@ -225,6 +225,14 @@ export default function Home() {
         <div className="shell real-product-heading"><div><div className="kicker">INSIDE THE ACTUAL PRODUCT</div><h2 id="real-product-title">Construction OS.<br /><em>Built and working.</em></h2></div><div><p>These are real screens from the OPSYNQ product experience—not a stock dashboard or a design concept. Each workspace turns operational data into a clear next decision.</p><span>Actual interface · Demo data shown</span></div></div>
 
         <figure className="shell product-shot product-shot-featured">
+          <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Product Walkthrough</span><b>VIDEO OVERVIEW</b></div>
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption -- promotional b-roll, no transcript available to caption */}
+          <video className="product-video" controls preload="none" poster="/video/construction-os-overview-poster.jpg" width={1920} height={1080} playsInline>
+            <source src="/video/construction-os-overview.mp4" type="video/mp4" />
+          </video>
+        </figure>
+
+        <figure className="shell product-shot product-shot-featured">
           <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Executive Dashboard</span><b>LIVE PRODUCT UI</b></div>
           <div className="product-image-wrap"><Image src="/product/construction-dashboard.jpg" width={2200} height={1206} sizes="(max-width: 900px) 100vw, 1240px" alt="OPSYNQ Construction OS executive dashboard with projects, crews, revenue, profit, invoices and cash position" /></div>
           <figcaption><div><span>EXECUTIVE CONTROL</span><h3>One view of the entire construction company.</h3></div><p>Projects, delays, tasks, crews, revenue, profit, outstanding invoices and cash position—visible without waiting for manual reporting.</p></figcaption>
