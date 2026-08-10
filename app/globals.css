@@ -158,6 +158,9 @@ body:before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opac
 .home-industries{background:radial-gradient(900px 520px at 100% 0%,rgba(75,92,227,.12),transparent 55%),#111317}
 .home-markets{background:radial-gradient(800px 460px at 8% 100%,rgba(75,92,227,.10),transparent 55%),#0e1116}
 .construction-workflow{background:radial-gradient(850px 480px at 95% 100%,rgba(155,92,240,.09),transparent 55%),#111317}
+.construction-video{padding:110px 0 130px;background:radial-gradient(900px 500px at 15% 0%,rgba(75,92,227,.12),transparent 55%),var(--ink)}
+.construction-video .compact-heading{margin-bottom:56px}
+.construction-video-player{display:block;width:100%;height:auto;background:#000}
 .home-consultation{background:radial-gradient(1100px 620px at 85% -10%,rgba(255,255,255,.10),transparent 55%),var(--blue)}
 .crm-flow-card,.faq-grid details,.market-faq details,.advantage-grid>article,.capability-grid>a,.vertical-crm-feature-grid>article,.construction-module-grid>article,.workflow-line>article,.visibility-cards>article,.service-outcome-grid>article{transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
 

@@ -50,6 +50,17 @@ export default function ConstructionOSPage() {
       <SiteHeader />
       <section className="hero shell construction-hero"><div className="hero-copy"><div className="eyebrow"><i /> CONSTRUCTION MANAGEMENT SOFTWARE</div><h1>Construction OS.<br /><em>From lead to site to margin.</em></h1><p>One custom construction CRM and operations platform for enquiries, estimates, projects, sites, crews, subcontractors, documents, variations, costs and management reporting.</p><div className="actions"><Link className="button primary" href="/contact">Book a construction demo <span>↗</span></Link><a className="button ghost" href="#modules">See the modules <span>↓</span></a></div></div><DashboardPreview /></section>
 
+      <section className="construction-video">
+        <div className="shell compact-heading"><div><div className="kicker">PRODUCT WALKTHROUGH</div><h2>See Construction OS<br /><em>in motion.</em></h2></div><p>A short walkthrough of projects, scheduling and finance—the modules construction teams use every day.</p></div>
+        <figure className="shell product-shot">
+          <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Product Walkthrough</span><b>VIDEO OVERVIEW</b></div>
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption -- promotional b-roll, no transcript available to caption */}
+          <video className="construction-video-player" controls preload="none" poster="/video/construction-os-overview-poster.jpg" width={1920} height={1080} playsInline>
+            <source src="/video/construction-os-overview.mp4" type="video/mp4" />
+          </video>
+        </figure>
+      </section>
+
       <section className="construction-problem"><div className="shell compact-heading"><div><div className="kicker">THE OPERATIONAL PROBLEM</div><h2>The project is connected.<br /><em>The software usually is not.</em></h2></div><div><p>Leads live in one CRM. Estimates live in Excel. Site updates arrive through WhatsApp. Documents sit in folders. Cost information reaches management after the decision has already been made.</p><p>Construction OS creates one operational record from the first enquiry through handover—without forcing every role into the same complicated interface.</p></div></div></section>
 
       <section className="construction-modules shell" id="modules"><div className="compact-heading"><div><div className="kicker">ONE CONSTRUCTION OPERATING SYSTEM</div><h2>Every stage visible.<br /><em>Every handoff controlled.</em></h2></div><p>Modules share customers, projects, permissions, documents and reporting. The system can begin with one high-value process and expand across the company.</p></div><div className="construction-module-grid">{modules.map(([Icon, title, text], index) => <article key={title}><div className="card-icon-row"><span className="card-icon"><Icon /></span><span>0{index + 1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div></section>
