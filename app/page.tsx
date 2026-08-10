@@ -224,19 +224,24 @@ export default function Home() {
       <section className="real-product-showcase" aria-labelledby="real-product-title">
         <div className="shell real-product-heading"><div><div className="kicker">INSIDE THE ACTUAL PRODUCT</div><h2 id="real-product-title">Construction OS.<br /><em>Built and working.</em></h2></div><div><p>These are real screens from the OPSYNQ product experience—not a stock dashboard or a design concept. Each workspace turns operational data into a clear next decision.</p><span>Actual interface · Demo data shown</span></div></div>
 
-        <figure className="shell product-shot product-shot-featured">
-          <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Product Walkthrough</span><b>VIDEO OVERVIEW</b></div>
-          {/* eslint-disable-next-line jsx-a11y/media-has-caption -- promotional b-roll, no transcript available to caption */}
-          <video className="product-video" controls preload="none" poster="/video/construction-os-overview-poster.jpg" width={1920} height={1080} playsInline>
-            <source src="/video/construction-os-overview.mp4" type="video/mp4" />
-          </video>
-        </figure>
+        <div className="shell feature-media-row">
+          <div className="feature-media-frame">
+            <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Product Walkthrough</span></div>
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption -- promotional b-roll, no transcript available to caption */}
+            <video className="product-video" controls preload="none" poster="/video/construction-os-overview-poster.jpg" width={1920} height={1080} playsInline>
+              <source src="/video/construction-os-overview.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className="feature-media-copy"><span>VIDEO OVERVIEW</span><h3>Watch the product in motion.</h3><p>A short walkthrough of projects, scheduling and finance—the modules construction teams use every day.</p></div>
+        </div>
 
-        <figure className="shell product-shot product-shot-featured">
-          <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Executive Dashboard</span><b>LIVE PRODUCT UI</b></div>
-          <div className="product-image-wrap"><Image src="/product/construction-dashboard.jpg" width={2200} height={1206} sizes="(max-width: 900px) 100vw, 1240px" alt="OPSYNQ Construction OS executive dashboard with projects, crews, revenue, profit, invoices and cash position" /></div>
-          <figcaption><div><span>EXECUTIVE CONTROL</span><h3>One view of the entire construction company.</h3></div><p>Projects, delays, tasks, crews, revenue, profit, outstanding invoices and cash position—visible without waiting for manual reporting.</p></figcaption>
-        </figure>
+        <div className="shell feature-media-row feature-media-row-reverse">
+          <div className="feature-media-frame">
+            <div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ / Executive Dashboard</span></div>
+            <div className="product-image-wrap"><Image src="/product/construction-dashboard.jpg" width={2200} height={1206} sizes="(max-width: 900px) 100vw, 700px" alt="OPSYNQ Construction OS executive dashboard with projects, crews, revenue, profit, invoices and cash position" /></div>
+          </div>
+          <div className="feature-media-copy"><span>EXECUTIVE CONTROL</span><h3>One view of the entire construction company.</h3><p>Projects, delays, tasks, crews, revenue, profit, outstanding invoices and cash position—visible without waiting for manual reporting.</p></div>
+        </div>
 
         <div className="shell product-screen-grid">{productScreens.map((screen) => <figure className="product-shot" key={screen.src}><div className="product-browser-bar"><i /><i /><i /><span>OPSYNQ</span></div><div className="product-image-wrap"><Image src={screen.src} width={screen.width} height={screen.height} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 410px" alt={screen.alt} /></div><figcaption><span>{screen.label}</span><h3>{screen.title}</h3><p>{screen.text}</p></figcaption></figure>)}</div>
       </section>

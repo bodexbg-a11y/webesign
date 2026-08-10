@@ -161,6 +161,16 @@ body:before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opac
 .construction-video{padding:110px 0 130px;background:radial-gradient(900px 500px at 15% 0%,rgba(75,92,227,.12),transparent 55%),var(--ink)}
 .construction-video .compact-heading{margin-bottom:56px}
 .product-video{display:block;width:100%;height:auto;background:#000}
+
+/* Feature media row: text beside media instead of a full-bleed image/video stacked alone */
+.feature-media-row{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;margin-top:56px}
+.feature-media-row-reverse{grid-template-columns:1fr 1.3fr}
+.feature-media-row-reverse .feature-media-frame{order:2}
+.feature-media-frame{overflow:hidden;border-radius:var(--radius-lg);border:1px solid #2c333e;background:#10141a;box-shadow:0 25px 60px rgba(0,0,0,.35)}
+.feature-media-copy span{color:#6697f7;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.feature-media-copy h3{margin:12px 0 0;font-size:24px;font-weight:530;letter-spacing:-.02em;color:#fff}
+.feature-media-copy p{margin-top:14px;color:#808894;font-size:14px;line-height:1.75;max-width:340px}
+@media(max-width:900px){.feature-media-row,.feature-media-row-reverse{grid-template-columns:1fr;gap:24px;margin-top:40px}.feature-media-row-reverse .feature-media-frame{order:0}.feature-media-copy p{max-width:none}}
 .home-consultation{background:radial-gradient(1100px 620px at 85% -10%,rgba(255,255,255,.10),transparent 55%),var(--blue)}
 .crm-flow-card,.faq-grid details,.market-faq details,.advantage-grid>article,.capability-grid>a,.vertical-crm-feature-grid>article,.construction-module-grid>article,.workflow-line>article,.visibility-cards>article,.service-outcome-grid>article{transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
 
@@ -172,5 +182,5 @@ body:before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opac
 .hero-copy>p,.sales-home .hero-copy>p{max-width:660px;margin:34px auto 31px}
 .hero .actions{justify-content:center}
 .hero .hero-note{justify-content:center}
-.hero .dashboard-wrap{margin-top:68px;transform:none;width:100%;max-width:1180px;animation:none}
+.hero .dashboard-wrap{margin-top:68px;transform:none;width:100%;max-width:980px;animation:none}
 @media(max-width:900px){.hero{padding-top:64px}.hero .dashboard-wrap{margin-top:50px}}
