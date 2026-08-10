@@ -222,7 +222,7 @@ export default function Home() {
       </section>
 
       <section className="real-product-showcase" aria-labelledby="real-product-title">
-        <div className="shell real-product-heading"><div><div className="kicker">INSIDE THE ACTUAL PRODUCT</div><h2 id="real-product-title">Construction OS.<br /><em>Built and working.</em></h2></div><div><p>These are real screens from the OPSYNQ product experience—not a stock dashboard or a design concept. Each workspace turns operational data into a clear next decision.</p><span>Actual interface · Demo data shown</span></div></div>
+        <div className="shell real-product-heading"><div><div className="kicker">AN EXAMPLE WE BUILT</div><h2 id="real-product-title">Construction OS.<br /><em>Built for one client.</em></h2></div><div><p>These are real screens from a Construction OS we built—not a stock dashboard or a design concept. Every company gets its own version, shaped around how they actually work.</p><span>Real build, one client · Demo data shown</span></div></div>
 
         <div className="shell feature-media-row">
           <div className="feature-media-frame">
@@ -232,7 +232,7 @@ export default function Home() {
               <source src="/video/construction-os-overview.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="feature-media-copy"><span>VIDEO OVERVIEW</span><h3>Watch the product in motion.</h3><p>A short walkthrough of projects, scheduling and finance—the modules construction teams use every day.</p></div>
+          <div className="feature-media-copy"><span>VIDEO OVERVIEW</span><h3>Watch this build in motion.</h3><p>A short walkthrough of projects, scheduling and finance—the modules construction teams use every day.</p></div>
         </div>
 
         <div className="shell feature-media-row feature-media-row-reverse">
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       <section className="home-pricing">
-        <div className="shell compact-heading"><div><div className="kicker">TRANSPARENT PRICING</div><h2>One core platform.<br /><em>Modules you add when ready.</em></h2></div><p>Every implementation starts from the same operating core. Specialised modules are priced and activated separately as the business needs them—each marked with a star in the workspace menu.</p></div>
+        <div className="shell compact-heading"><div><div className="kicker">TRANSPARENT PRICING</div><h2>One core architecture.<br /><em>Built onto as you grow.</em></h2></div><p>Every implementation starts from the same operating core, then we develop and add the specialised modules a business needs—each one custom-built into your own system, not a toggle in someone else&apos;s.</p></div>
         <div className="shell pricing-grid">
           <div className="pricing-card pricing-core">
             <div className="pricing-card-head"><span className="card-icon"><IconGrid /></span><b>Base core</b><span className="pricing-price">from €5,000</span></div>
@@ -288,7 +288,7 @@ export default function Home() {
           <div className="pricing-connector" aria-hidden="true">+</div>
           <div className="pricing-card pricing-addon">
             <div className="pricing-card-head"><span className="card-icon"><IconPuzzle /></span><b>Add-on modules</b><span className="pricing-price">Priced separately</span></div>
-            <p className="pricing-note">Sold separately and marked ⭐ in the workspace menu—activate as the operation grows.</p>
+            <p className="pricing-note">Scoped and built separately as the operation grows—each one developed into your own system, not sold as a fixed package.</p>
             <ul className="pricing-list">{addOnModules.map((module) => <li key={module}>{module}</li>)}</ul>
           </div>
         </div>
