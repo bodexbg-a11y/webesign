@@ -72,6 +72,7 @@ h1 em,h2 em{font-style:normal;font-weight:300;color:#777b84}
 .problem-grid h3,.advantage-grid h3,.construction-module-grid h3{margin-top:0}
 .capability-grid>a{align-items:start}
 .flow-icon{display:block;width:20px;height:20px;color:var(--blue);margin-bottom:10px}
+.product-screen-grid{margin-top:56px}
 
 /* Core vs. add-on module pricing */
 .home-pricing{padding:128px 0;background:#f6f7fb;color:#111}
@@ -84,7 +85,7 @@ h1 em,h2 em{font-style:normal;font-weight:300;color:#777b84}
 .pricing-addon .card-icon{background:rgba(155,92,240,.12);color:#9b5cf0}
 .pricing-core{background:linear-gradient(165deg,rgba(75,92,227,.06),#fff 42%);border-color:rgba(75,92,227,.18)}
 .pricing-addon{background:linear-gradient(165deg,rgba(155,92,240,.07),#fff 42%);border-color:rgba(155,92,240,.18)}
-.pricing-grid{position:relative;align-items:start}
+.pricing-grid{position:relative;align-items:stretch}
 .pricing-connector{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--card-line);box-shadow:var(--shadow-md);display:grid;place-items:center;font-size:19px;font-weight:700;color:var(--blue);z-index:2}
 @media(max-width:900px){.pricing-connector{display:none}}
 .pricing-card p.pricing-note{margin:-10px 0 20px;color:#767a82;font-size:12.5px;line-height:1.6}
@@ -141,7 +142,8 @@ label{margin-bottom:22px}
 .industry-sales-list>a,.text-link-grid a:nth-child(odd),.text-link-grid a:nth-child(even),.related-services>div:last-child>a,.market-integration-grid>span,.industry-solution-links>a,.market-links a,.locale-services article,.locale-service-link{border:1px solid var(--card-line-dark);border-radius:var(--radius-md);background:var(--card-bg-dark);padding-left:18px;padding-right:18px}
 
 /* FAQ accordions as individual cards */
-.faq-grid details,.market-faq details{border:1px solid var(--card-line-dark);border-radius:var(--radius-md);background:var(--card-bg-dark);margin-bottom:10px;overflow:hidden}
+.faq-grid details,.market-faq details{border:1px solid var(--card-line-dark);border-radius:var(--radius-md);background:var(--card-bg-dark);margin-bottom:10px;overflow:hidden;padding:0 26px}
+.faq-grid details p,.market-faq details p{padding:0 30px 26px 50px}
 .faq-grid details:last-child,.market-faq details:last-child{border:1px solid var(--card-line-dark)}
 .faq-grid details[open],.market-faq details[open]{background:#161a24}
 
@@ -177,7 +179,7 @@ body:before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opac
 /* Hero: bold centered statement with a large product shot underneath, not another split two-column template */
 .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:76px;padding-bottom:76px;min-height:auto}
 .hero:before{inset:-86px -10% auto -10%;height:640px;background:radial-gradient(900px 480px at 50% 0%,rgba(75,92,227,.22),transparent 60%),radial-gradient(650px 420px at 15% 60%,rgba(155,92,240,.13),transparent 55%),radial-gradient(650px 420px at 85% 60%,rgba(75,92,227,.13),transparent 55%)}
-.hero .eyebrow{display:inline-flex;margin-left:auto;margin-right:auto}
+.hero .eyebrow{display:none}
 .hero-copy,.sales-home .hero-copy{max-width:900px;display:flex;flex-direction:column;align-items:center}
 .hero-copy>p,.sales-home .hero-copy>p{max-width:660px;margin:34px auto 31px}
 .hero .actions{justify-content:center}
