@@ -9,6 +9,7 @@ const solutionPaths = [
 ];
 
 const primaryPaths = [
+  "/construction",
   "/construction-os",
   "/solutions",
   "/about",
@@ -19,7 +20,7 @@ const primaryPaths = [
   "/legal",
 ];
 
-const lastModified = new Date("2026-08-07");
+const lastModified = new Date("2026-08-20");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const alternates = Object.fromEntries(
@@ -45,8 +46,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const primaryPages: MetadataRoute.Sitemap = primaryPaths.map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified,
-    changeFrequency: path === "/construction-os" || path === "/solutions" ? "weekly" : "monthly",
-    priority: path === "/construction-os" ? 0.95 : path === "/solutions" ? 0.9 : 0.6,
+    changeFrequency: path === "/construction" || path === "/construction-os" || path === "/solutions" ? "weekly" : "monthly",
+    priority: path === "/construction" ? 0.95 : path === "/construction-os" ? 0.9 : path === "/solutions" ? 0.9 : 0.6,
   }));
 
   const servicePages: MetadataRoute.Sitemap = Object.keys(services).map((slug) => ({
