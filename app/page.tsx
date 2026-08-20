@@ -6,7 +6,7 @@ import { IconAlert, IconBolt, IconBox, IconBriefcase, IconClock, IconCoins, Icon
 import Link from "./components/SafeLink";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
-import { SITE_URL } from "./seo-data";
+import { CALENDLY_URL, SITE_URL } from "./seo-data";
 
 export const metadata: Metadata = {
   title: { absolute: "Custom Business Operating Systems & Automation Software | OPSYNQ" },
@@ -183,7 +183,7 @@ export default function Home() {
           <div className="eyebrow"><i /> BUSINESS SYSTEMS, NOT WEBSITES</div>
           <h1>Custom Business<br /><em>Operating Systems.</em></h1>
           <p>One platform built around the way your company works. Connect CRM, operations, employees, finance, documents, reporting, integrations and AI—without forcing the business into another generic tool.</p>
-          <div className="actions"><Link className="button primary" href="#consultation">Book a strategy call <span>↗</span></Link><Link className="button ghost" href="#capabilities">Explore the system <span>↓</span></Link></div>
+          <div className="actions"><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a strategy call <span>↗</span></Link><Link className="button ghost" href="#capabilities">Explore the system <span>↓</span></Link></div>
           <div className="hero-note"><span>For companies with 10–500+ employees</span><span className="implementation-price">Implementation from €5,000</span></div>
         </div>
         <DashboardPreview />

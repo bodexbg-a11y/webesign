@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "../../components/SafeLink";
 import { notFound } from "next/navigation";
 import {
+  CALENDLY_URL,
   SITE_URL,
   marketLinks,
   serviceLinks,
@@ -159,7 +160,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div>{relatedServices.map((related) => <Link href={related.href} key={related.href}>{related.label}<span>↗</span></Link>)}</div>
       </section>
 
-      <section className="locale-cta"><div className="shell"><h2>Map the right {service.name.toLowerCase()} solution.</h2><p>Show us the workflows, spreadsheets and disconnected systems creating operational friction. We will identify a practical first implementation.</p><Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link><small>Remote discovery · Netherlands · Norway · Sweden · Denmark</small></div></section>
+      <section className="locale-cta"><div className="shell"><h2>Map the right {service.name.toLowerCase()} solution.</h2><p>Show us the workflows, spreadsheets and disconnected systems creating operational friction. We will identify a practical first implementation.</p><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a strategy call <span>↗</span></Link><small>Remote discovery · Netherlands · Norway · Sweden · Denmark</small></div></section>
 
       <SiteFooter />
     </main>

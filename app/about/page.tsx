@@ -3,6 +3,7 @@ import Link from "../components/SafeLink";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { legalDetails } from "../legal-data";
+import { CALENDLY_URL } from "../seo-data";
 
 export const metadata: Metadata = {
   title: "About OPSYNQ",
@@ -23,7 +24,7 @@ export default function AboutPage() {
 
       <section className="approach-section"><div className="shell"><div className="compact-heading"><div><div className="kicker">OUR APPROACH</div><h2>Clarity before code.</h2></div><p>A serious Business Operating System cannot be scoped from a feature checklist alone.</p></div><div className="approach-grid">{[["01","Business discovery","Define outcomes, constraints, stakeholders and operational risk."],["02","Workflow analysis","Map how people, information, decisions and exceptions move today."],["03","Product architecture","Design one data model, permission system and modular roadmap."],["04","Experience design","Prototype critical workflows before committing to the full build."],["05","Controlled implementation","Launch in practical stages with migration, testing and training."],["06","Continuous improvement","Expand the platform as the company and its operating advantage grow."]].map(([number,title,text])=><article key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
-      <section className="compact-cta"><div className="shell"><div><div className="kicker">A LONG-TERM OPERATING ASSET</div><h2>Build a system the company can own and expand.</h2></div><div><p>Start with one important operational problem and a clear first release.</p><Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link></div></div></section>
+      <section className="compact-cta"><div className="shell"><div><div className="kicker">A LONG-TERM OPERATING ASSET</div><h2>Build a system the company can own and expand.</h2></div><div><p>Start with one important operational problem and a clear first release.</p><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a strategy call <span>↗</span></Link></div></div></section>
       <SiteFooter />
     </main>
   );

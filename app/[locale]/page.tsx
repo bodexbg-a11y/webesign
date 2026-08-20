@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "../components/SafeLink";
 import { notFound } from "next/navigation";
 import {
+  CALENDLY_URL,
   SITE_URL,
   marketAlternates,
   markets,
@@ -108,7 +109,7 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
         <h1>{market.headline.split(" for ")[0]}<br /><em>for {market.adjective} companies.</em></h1>
         <p>Replace disconnected CRM software, Excel spreadsheets and manual work with one custom Business Operating System—built around your workflows, people, data and operational priorities.</p>
         <div className="actions">
-          <Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link>
+          <Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a strategy call <span>↗</span></Link>
           <Link className="button ghost" href="/services/business-automation-software">Explore business automation <span>↓</span></Link>
         </div>
         <div className="locale-orbit" aria-hidden="true"><b>CRM</b><b>AI</b><b>ERP</b><b>OPS</b><i>ONE<br />SYSTEM</i></div>
@@ -194,7 +195,7 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
         <div className="shell">
           <h2>Ready to simplify your {market.adjective.toLowerCase()} operation?</h2>
           <p>Tell us where disconnected systems and manual work are slowing the company down. We will map what one connected Business Operating System could change.</p>
-          <Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link>
+          <Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a strategy call <span>↗</span></Link>
           <small>{market.city} · Remote implementation across {market.country}</small>
         </div>
       </section>

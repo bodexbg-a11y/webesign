@@ -3,7 +3,7 @@ import { IconBox, IconCrane, IconFactory, IconHome, IconTruck } from "../compone
 import Link from "../components/SafeLink";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
-import { SITE_URL } from "../seo-data";
+import { CALENDLY_URL, SITE_URL } from "../seo-data";
 
 export const metadata: Metadata = {
   title: "Business OS Solutions & Modules",
@@ -67,7 +67,7 @@ export default function SolutionsPage() {
 
       <section className="industry-solutions shell"><div className="compact-heading"><div><div className="kicker">INDUSTRY OPERATING SYSTEMS</div><h2>The same core.<br /><em>Configured for the operation.</em></h2></div><p>Industry solutions reuse the OPSYNQ foundation while adapting objects, workflows, dashboards and terminology to each client&apos;s business.</p></div><div className="industry-solution-links"><Link href="/construction-os"><span className="card-icon"><IconCrane /></span><b>Construction OS</b><i>Flagship solution ↗</i></Link><Link href="/solutions/manufacturing-os"><span className="card-icon"><IconFactory /></span><b>Manufacturing OS</b><i>Explore ↗</i></Link><Link href="/solutions/logistics-os"><span className="card-icon"><IconTruck /></span><b>Logistics OS</b><i>Explore ↗</i></Link><Link href="/solutions/distribution-os"><span className="card-icon"><IconBox /></span><b>Distribution OS</b><i>Explore ↗</i></Link><Link href="/solutions/property-management-os"><span className="card-icon"><IconHome /></span><b>Property Management OS</b><i>Explore ↗</i></Link></div></section>
 
-      <section className="compact-cta"><div className="shell"><div><div className="kicker">DEFINE THE RIGHT FIRST LAYER</div><h2>Build what the operation actually needs.</h2></div><div><p>A strategy call maps the bottlenecks, existing systems and first practical release.</p><Link className="button primary" href="/contact">Book a demo <span>↗</span></Link></div></div></section>
+      <section className="compact-cta"><div className="shell"><div><div className="kicker">DEFINE THE RIGHT FIRST LAYER</div><h2>Build what the operation actually needs.</h2></div><div><p>A strategy call maps the bottlenecks, existing systems and first practical release.</p><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a demo <span>↗</span></Link></div></div></section>
       <SiteFooter />
     </main>
   );

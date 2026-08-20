@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "../../components/SafeLink";
 import { notFound } from "next/navigation";
-import { SITE_URL, marketLinks, serviceLinks } from "../../seo-data";
+import { CALENDLY_URL, SITE_URL, marketLinks, serviceLinks } from "../../seo-data";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 
@@ -103,7 +103,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
 
       <section className="market-integrations shell"><div><div className="kicker">TARGET MARKETS</div><h2>{solution.name} for growing Nordic companies.</h2><p>English-language discovery and remote implementation are available for companies in the Netherlands, Norway, Sweden and Denmark.</p></div><div className="text-link-grid">{marketLinks.map((market) => <Link href={market.href} key={market.href}>{solution.keyword} in {market.label} ↗</Link>)}</div></section>
 
-      <section className="locale-cta"><div className="shell"><h2>See how {solution.name} fits your business.</h2><p>Map the manual processes and disconnected systems your operation needs to replace.</p><Link className="button primary" href="/contact">Book a strategy call <span>↗</span></Link><small>Remote discovery · Clear implementation roadmap</small></div></section>
+      <section className="locale-cta"><div className="shell"><h2>See how {solution.name} fits your business.</h2><p>Map the manual processes and disconnected systems your operation needs to replace.</p><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a strategy call <span>↗</span></Link><small>Remote discovery · Clear implementation roadmap</small></div></section>
       <SiteFooter />
     </main>
   );

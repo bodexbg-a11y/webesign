@@ -1,4 +1,5 @@
 export const SITE_URL = "https://www.opsynq.net";
+export const CALENDLY_URL = "https://calendly.com/opsynqos/30min";
 
 export const marketAlternates = {
   en: "/",

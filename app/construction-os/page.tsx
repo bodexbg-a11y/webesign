@@ -4,7 +4,7 @@ import DashboardPreview from "../components/DashboardPreview";
 import { IconChart, IconClipboard, IconCoins, IconFile, IconGrid, IconKanban, IconRoute, IconUsers } from "../components/Icons";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
-import { SITE_URL } from "../seo-data";
+import { CALENDLY_URL, SITE_URL } from "../seo-data";
 
 export const metadata: Metadata = {
   title: "Construction Management Software & Construction CRM",
@@ -48,7 +48,7 @@ export default function ConstructionOSPage() {
     <main className="construction-page">
       <script id="construction-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <SiteHeader />
-      <section className="hero shell construction-hero"><div className="hero-copy"><div className="eyebrow"><i /> CONSTRUCTION MANAGEMENT SOFTWARE</div><h1>Construction OS.<br /><em>From lead to site to margin.</em></h1><p>One custom construction CRM and operations platform for enquiries, estimates, projects, sites, crews, subcontractors, documents, variations, costs and management reporting.</p><div className="actions"><Link className="button primary" href="/contact">Book a construction demo <span>↗</span></Link><a className="button ghost" href="#modules">See the modules <span>↓</span></a></div></div><DashboardPreview /></section>
+      <section className="hero shell construction-hero"><div className="hero-copy"><div className="eyebrow"><i /> CONSTRUCTION MANAGEMENT SOFTWARE</div><h1>Construction OS.<br /><em>From lead to site to margin.</em></h1><p>One custom construction CRM and operations platform for enquiries, estimates, projects, sites, crews, subcontractors, documents, variations, costs and management reporting.</p><div className="actions"><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a construction demo <span>↗</span></Link><a className="button ghost" href="#modules">See the modules <span>↓</span></a></div></div><DashboardPreview /></section>
 
       <section className="construction-video">
         <div className="shell compact-heading"><div><div className="kicker">PRODUCT WALKTHROUGH</div><h2>See Construction OS<br /><em>in motion.</em></h2></div><p>A short walkthrough of projects, scheduling and finance—the modules construction teams use every day.</p></div>
@@ -75,7 +75,7 @@ export default function ConstructionOSPage() {
 
       <section className="construction-markets"><div className="shell"><div><div className="kicker">ENGLISH-LANGUAGE NORDIC MARKETS</div><h2>Construction OS for companies across Northern Europe.</h2></div><div className="text-link-grid"><Link href="/nl">Construction software in Netherlands ↗</Link><Link href="/no">Construction software in Norway ↗</Link><Link href="/sv">Construction software in Sweden ↗</Link><Link href="/da">Construction software in Denmark ↗</Link></div></div></section>
 
-      <section className="compact-cta"><div className="shell"><div><div className="kicker">MAP YOUR CONSTRUCTION OPERATION</div><h2>See what Construction OS could replace.</h2></div><div><p>Bring the spreadsheets, tools and manual handoffs. We will identify a practical first implementation.</p><Link className="button primary" href="/contact">Book a construction demo <span>↗</span></Link></div></div></section>
+      <section className="compact-cta"><div className="shell"><div><div className="kicker">MAP YOUR CONSTRUCTION OPERATION</div><h2>See what Construction OS could replace.</h2></div><div><p>Bring the spreadsheets, tools and manual handoffs. We will identify a practical first implementation.</p><Link className="button primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a construction demo <span>↗</span></Link></div></div></section>
       <SiteFooter />
     </main>
   );
