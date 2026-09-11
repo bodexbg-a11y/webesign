@@ -1,0 +1,873 @@
+{
+  "_readme": "All interface and page copy, mirrored between bg and en. Company-specific facts live in site.json and models.json, not here.",
+  "bg": {
+    "locale": "bg-BG",
+    "label": "Български",
+    "dir": {
+      "models": "modeli",
+      "tourism": "turizam",
+      "pricing": "ceni",
+      "privacy": "poveritelnost",
+      "cookies": "biskvitki",
+      "thanks": "blagodarim"
+    },
+    "nav": {
+      "models": "Модели",
+      "pricing": "Цена",
+      "tourism": "За бизнес",
+      "process": "Как работим",
+      "faq": "Въпроси",
+      "quote": "Оферта",
+      "menu": "Меню",
+      "close": "Затворете",
+      "skip": "Към съдържанието"
+    },
+    "common": {
+      "tbd": "уточнява се",
+      "onRequest": "по запитване",
+      "placeholderNote": "за попълване",
+      "render": "Визуализация",
+      "photo": "Снимка на доставена къща",
+      "from": "от",
+      "vatIncluded": "с включено ДДС",
+      "vatExcluded": "без ДДС",
+      "vatUnknown": "ДДС: уточнява се",
+      "area": "Площ",
+      "areaTotal": "Застроена площ",
+      "areaInterior": "Вътрешна площ",
+      "areaTerrace": "Тераса",
+      "bedrooms": "Спални",
+      "bathrooms": "Санитарни помещения",
+      "sleeps": "Спални места",
+      "viewModel": "Вижте модела",
+      "quoteForModel": "Получете оферта за този модел",
+      "allModels": "Всички модели",
+      "call": "Обадете се",
+      "getQuote": "Получете оферта",
+      "back": "Назад",
+      "next": "Напред",
+      "openPlan": "Отворете плана",
+      "closePlan": "Затворете",
+      "more": "Още",
+      "sqm": "м²"
+    },
+    "hero": {
+      "title": "Модулни къщи за вашия парцел",
+      "lead": "Изберете модел и комплектация. Ние изчисляваме доставката, крана и монтажа за вашия терен и показваме ясно какво влиза в цената и какво се плаща отделно.",
+      "primary": "Разгледайте моделите",
+      "secondary": "Получете индивидуална оферта",
+      "priceNote": "Цените са за конкретна комплектация и не включват доставка, основа и монтаж, докато не видим парцела."
+    },
+    "scenarios": {
+      "title": "Два различни разговора",
+      "lead": "Изборът на модул за живеене и за туристически обект се води по различни критерии. Тръгнете от вашия случай.",
+      "living": {
+        "title": "За собствено живеене",
+        "text": "Целогодишно обитаване или вила. Значение имат изолационният пакет, отоплението, разрешителните и присъединяването към ток и вода.",
+        "cta": "Модели за живеене"
+      },
+      "tourism": {
+        "title": "За туристически бизнес",
+        "text": "Къщи за гости, къмпинги и бази за отдих. Значение имат броят еднакви единици, оборудването за експлоатация и етапността на монтажа.",
+        "cta": "Модули за бизнес"
+      }
+    },
+    "catalog": {
+      "title": "Моделите",
+      "lead": "Малка гама, в която разликите са ясни. Всеки модел има собствена страница с галерия, комплектация и технически данни.",
+      "filterAll": "Всички",
+      "filterLiving": "За живеене",
+      "filterTourism": "За туризъм",
+      "empty": "Няма модели в тази категория."
+    },
+    "costs": {
+      "title": "Какво влиза в цената и какво се изчислява отделно",
+      "lead": "Цената на квадратен метър не отговаря на въпроса колко ще струва къщата на вашия парцел. Затова разделяме проекта на осем пера и за всяко казваме къде стои.",
+      "status": {
+        "included": "Включено",
+        "separate": "Плаща се отделно",
+        "calculated": "Изчислява се след оглед",
+        "tbd": "Уточнява се"
+      },
+      "items": {
+        "house": {
+          "title": "Къщата и довършителните работи",
+          "text": "Конструкция, изолация, външна облицовка, дограма, вътрешна облицовка на стени и таван, под, баня, кухня и електрическа инсталация — в обема на избраната комплектация."
+        },
+        "delivery": {
+          "title": "Доставка до обекта",
+          "text": "Транспорт от завода до парцела. Зависи от разстоянието, от габарита на модула и от проходимостта на маршрута."
+        },
+        "crane": {
+          "title": "Разтоварване и кран",
+          "text": "Автокран с подходяща товароподемност и място за стъпване. Зависи от теглото на модула и от подстъпа до петното на сградата."
+        },
+        "assembly": {
+          "title": "Монтаж на място",
+          "text": "Позициониране върху основата, свързване на модулите при двумодулните къщи, довършване на фугите и предаване в работно състояние."
+        },
+        "foundation": {
+          "title": "Основа",
+          "text": "Винтови пилоти, бетонни точки или плоча. Изборът зависи от почвата, наклона и от това дали сградата се третира като постоянна."
+        },
+        "utilities": {
+          "title": "Присъединяване към ток, вода и канал",
+          "text": "Договорите за присъединяване се сключват от собственика с електроразпределителното и ВиК дружеството. Ние свързваме къщата до изведената точка на парцела."
+        },
+        "permits": {
+          "title": "Проектиране и разрешителни",
+          "text": "Сглобяемата жилищна или вилна сграда с ниско застрояване е строеж от V категория и изисква разрешение за строеж от главния архитект на общината. Нужни са скица на имота, проект от проектант и предварителни договори за присъединяване. Сроковете и таксите се определят от общината."
+        },
+        "extras": {
+          "title": "Допълнително оборудване",
+          "text": "Уреди, климатизация, джакузи, пергола, огради, озеленяване и всичко извън комплектацията."
+        }
+      },
+      "vatLabel": "ДДС",
+      "vatNote": "Стандартната ставка в България е 20%. Дали е включена в показаните цени — вижте отбелязаното при всяка цена.",
+      "finalNote": "Окончателна цена се дава след като са известни парцелът и избраната комплектация. Не поемаме ангажимент за монтаж без необходимите разрешения."
+    },
+    "proof": {
+      "title": "Доказателства, не обещания",
+      "lead": "Този раздел се попълва само с материали от реални обекти. Докато ги няма, мястото стои празно вместо да бъде запълнено с чужди снимки.",
+      "video": {
+        "title": "Видео обиколка",
+        "empty": "Видеото се подготвя."
+      },
+      "production": {
+        "title": "Производство и монтаж",
+        "empty": "Снимките от производството се подготвят."
+      },
+      "projects": {
+        "title": "Реализирани проекти",
+        "empty": "Първите реализирани обекти ще бъдат публикувани тук с местоположение, модел и обхват на работата."
+      },
+      "manufacturer": {
+        "title": "Производител и наша роля"
+      },
+      "warranty": {
+        "title": "Гаранция",
+        "structure": "Конструкция",
+        "finishes": "Довършителни работи",
+        "empty": "Гаранционните условия се уточняват."
+      },
+      "showroom": {
+        "title": "Оглед на място",
+        "unavailable": "В момента няма къща, отворена за посещение. Когато има, тук ще се появи запазване на час."
+      }
+    },
+    "process": {
+      "title": "От избора на модел до предаването",
+      "lead": "Седем стъпки. Сроковете се потвърждават с офертата, защото зависят от модела, парцела и от общината.",
+      "steps": [
+        {
+          "title": "Избор на модел",
+          "text": "Казвате ни за какво ще служи къщата и какъв е парцелът. Ако още нямате терен, започваме от изискванията към него."
+        },
+        {
+          "title": "Оглед на парцела",
+          "text": "Проверяваме подстъпа за камион и кран, наклона, почвата и разстоянието до точките за ток и вода. Част от това се вижда от скица и снимки."
+        },
+        {
+          "title": "Оферта",
+          "text": "Получавате разбивка по осемте пера, а не една обща сума."
+        },
+        {
+          "title": "Проектиране и разрешителни",
+          "text": "Подготвяме документацията за общината. Одобрението се издава от общината, не от нас."
+        },
+        {
+          "title": "Производство",
+          "text": "Къщата се изгражда в халето, независимо от времето навън."
+        },
+        {
+          "title": "Доставка и монтаж",
+          "text": "Камион, кран, позициониране върху основата и свързване."
+        },
+        {
+          "title": "Предаване",
+          "text": "Оглед, отстраняване на забележки, документи и гаранция."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Въпросите, които получаваме най-често",
+      "items": [
+        {
+          "q": "Нужно ли е разрешение за строеж?",
+          "a": "За жилищна или вилна сграда с ниско застрояване — да. Такава сграда е строеж от V категория и разрешението се издава от главния архитект на общината. Процедурата минава през скица на имота, проект от проектант и предварителни договори за присъединяване към електроразпределителното и ВиК дружеството. Конкретните изисквания и такси се различават по общини — потвърдете ги с вашата община или ни оставете запитване и ще проверим заедно."
+        },
+        {
+          "q": "Каква основа е необходима?",
+          "a": "Винтови пилоти, бетонни точки или плоча. Изборът зависи от почвата, наклона на терена и от начина, по който сградата се третира в разрешителния режим. Основата се определя след оглед и се оферира отделно."
+        },
+        {
+          "q": "Може ли къщата да се използва целогодишно?",
+          "a": "Зависи от изолационния пакет на конкретния модел. Стойностите на изолацията и дограмата са в техническите характеристики на страницата на модела; когато производителят ги потвърди, ще бъдат публикувани там."
+        },
+        {
+          "q": "Колко време отнема от поръчка до нанасяне?",
+          "a": "Срокът се състои от производство, разрешителна процедура и монтаж. Производственият срок се потвърждава при поръчка, а разрешителната процедура зависи от общината. Затова даваме срок в офертата, а не предварително."
+        },
+        {
+          "q": "Може ли къщата да се премести по-късно?",
+          "a": "Конструкцията е проектирана да бъде транспортирана и повдигана с кран. Практическата възможност за преместване зависи от вида на основата и от присъединяването към мрежите — уточнява се за конкретния случай."
+        },
+        {
+          "q": "Работите ли в цялата страна?",
+          "a": "Обхватът на доставката и цената ѝ зависят от разстоянието и подстъпа. Напишете населеното място в запитването и ще калкулираме транспорта и крана за него."
+        }
+      ]
+    },
+    "model": {
+      "gallery": "Галерия",
+      "specs": "Основни данни",
+      "priceTitle": "Цена",
+      "packageTitle": "Комплектация",
+      "packageEmpty": "Таблицата с комплектацията се попълва с данни от производителя.",
+      "techTitle": "Технически характеристики",
+      "techEmpty": "Техническите характеристики се попълват с данни от производителя.",
+      "planTitle": "Планировка",
+      "planEmpty": "Планът на този модел още не е получен от производителя. Когато бъде качен, се отваря в голям размер.",
+      "roomsTitle": "Помещения и начин на ползване",
+      "roomsEmpty": "Описанието на помещенията се допълва след потвърждение на плана.",
+      "deliveryTitle": "Доставка и монтаж",
+      "requirementsTitle": "Изисквания към парцела",
+      "requirements": [
+        "Подстъп за камион с ширина поне 3,5 м, без ниски клони и провиснали кабели по маршрута.",
+        "Място за стъпване на автокран в близост до петното на сградата.",
+        "Относително равен терен или предвидено подравняване.",
+        "Изведени точки за ток и вода до петното или план за извеждането им.",
+        "Осигурен достъп до имота в деня на монтажа."
+      ],
+      "requirementsNote": "Това са общите изисквания. Финалните се потвърждават след оглед на конкретния парцел.",
+      "faqTitle": "Въпроси за този модел",
+      "formTitle": "Оферта за този модел",
+      "otherModels": "Другите модели"
+    },
+    "tourism": {
+      "title": "Модули за туристически обект",
+      "lead": "Къщи за гости, къмпинги, бази за отдих и малки хотели, които добавят места за нощувка без да отварят строителна площадка.",
+      "modelsTitle": "Подходящи модели",
+      "capacityTitle": "Вместимост и планировки",
+      "capacityNote": "Вместимостта на всеки модул е в неговата страница. Когато плановете бъдат получени, ще бъдат публикувани в голям размер.",
+      "operationTitle": "Комплектация за експлоатация",
+      "operationText": "За обект под наем комплектацията се различава от тази за живеене: по-издръжливи настилки, оборудване за бързо почистване, отделно електромерно табло за всяка единица и решение за отопление извън сезона. Обхватът се уточнява за конкретния обект.",
+      "quantityTitle": "Един или няколко модула",
+      "quantityText": "Може да се поръча единичен модул или няколко еднакви. При повече от една единица монтажът може да се раздели на етапи, съобразени със сезона на обекта.",
+      "stagesTitle": "Как оценяваме обекта",
+      "stages": [
+        {
+          "title": "Обхват",
+          "text": "Брой единици, сезон на работа и целева категория на обекта."
+        },
+        {
+          "title": "Оглед на терена",
+          "text": "Подстъп, разположение на единиците, разстояния до мрежите и до общите части."
+        },
+        {
+          "title": "Инфраструктура",
+          "text": "Ток, вода, канализация и пътеки между единиците — какво има и какво липсва."
+        },
+        {
+          "title": "Разрешителен режим",
+          "text": "Проверяваме режима на имота и какво изисква общината за избрания брой сгради."
+        },
+        {
+          "title": "Оферта по етапи",
+          "text": "Разбивка по единици и по етапи, за да се планира бюджетът."
+        }
+      ],
+      "cta": "Поискайте оферта за вашия обект",
+      "noYield": "Не публикуваме прогнози за доходност или срок на откупуване. Такова изчисление има смисъл само с данни за вашата локация, цена на нощувка и разходи за експлоатация — правим го заедно с вас, ако го поискате."
+    },
+    "form": {
+      "title": "Получете оферта за вашия парцел",
+      "lead": "Две кратки стъпки. Без прикачване на документи на този етап.",
+      "step1": "Стъпка 1 от 2 · За проекта",
+      "step2": "Стъпка 2 от 2 · За връзка",
+      "purpose": {
+        "label": "За какво ви е къщата?",
+        "options": [
+          "Постоянно живеене",
+          "Вила или втори дом",
+          "Отдаване под наем"
+        ]
+      },
+      "model": {
+        "label": "Кой модел ви интересува?",
+        "placeholder": "Изберете",
+        "undecided": "Още не съм решил — нужна е консултация"
+      },
+      "location": {
+        "label": "Къде ще се монтира къщата?",
+        "placeholder": "Населено място или община"
+      },
+      "land": {
+        "label": "Имате ли парцел?",
+        "options": [
+          "Да, имам",
+          "Избирам парцел"
+        ]
+      },
+      "budget": {
+        "label": "Приблизителен бюджет за проекта, с монтажа",
+        "options": [
+          "до 30 000 €",
+          "30 000 – 60 000 €",
+          "60 000 – 100 000 €",
+          "над 100 000 €",
+          "Нужна е консултация"
+        ]
+      },
+      "name": {
+        "label": "Име",
+        "placeholder": "Име и фамилия"
+      },
+      "phone": {
+        "label": "Телефон",
+        "placeholder": "+359"
+      },
+      "email": {
+        "label": "Email",
+        "optional": "незадължително",
+        "placeholder": "name@example.com"
+      },
+      "channel": {
+        "label": "Как предпочитате да се свържем?",
+        "options": [
+          "Телефон",
+          "Viber",
+          "WhatsApp",
+          "Email"
+        ]
+      },
+      "time": {
+        "label": "Удобно време",
+        "options": [
+          "Сутрин",
+          "Следобед",
+          "Вечер",
+          "Без значение"
+        ]
+      },
+      "timeline": {
+        "label": "Кога планирате покупката?",
+        "options": [
+          "До 3 месеца",
+          "3 – 6 месеца",
+          "6 – 12 месеца",
+          "Още проучвам"
+        ]
+      },
+      "consent": "Съгласен съм данните ми да бъдат използвани за изготвяне на оферта.",
+      "consentLink": "Политика за поверителност",
+      "submit": "Изпратете запитването",
+      "sending": "Изпраща се…",
+      "next": "Продължете",
+      "back": "Назад",
+      "errors": {
+        "required": "Полето е задължително.",
+        "name": "Моля, въведете име.",
+        "phone": "Моля, въведете телефон, на който да се свържем.",
+        "email": "Проверете имейл адреса.",
+        "consent": "Нужно е съгласие, за да обработим запитването.",
+        "summary": "Проверете отбелязаните полета."
+      },
+      "successTitle": "Запитването е изпратено.",
+      "successText": "Следваща стъпка: преглеждаме модела и локацията и се свързваме с вас за уточнения преди офертата.",
+      "notConnectedTitle": "Запитването НЕ е изпратено.",
+      "notConnectedText": "Формата още не е свързана със система за заявки. Моля, свържете се директно — данните ви са запазени в този прозорец, за да не ги пишете отново.",
+      "responseTimeUnknown": "Срокът за отговор се уточнява."
+    },
+    "consent": {
+      "title": "Бисквитки",
+      "text": "Използваме задължителни бисквитки за работата на сайта. За реклама и анализ зареждаме допълнителни само с ваше съгласие.",
+      "accept": "Приемам всички",
+      "necessary": "Само необходимите",
+      "settings": "Настройки",
+      "save": "Запазете избора",
+      "catNecessary": "Необходими",
+      "catNecessaryText": "Нужни за работата на сайта. Не могат да бъдат изключени.",
+      "catAnalytics": "Анализ",
+      "catAnalyticsText": "Помагат ни да видим кои страници се четат и къде спира разглеждането.",
+      "catMarketing": "Реклама",
+      "catMarketingText": "Позволяват измерване на рекламните кампании в Google и Facebook."
+    },
+    "footer": {
+      "about": "Модулни къщи с доставка и монтаж в България.",
+      "navTitle": "Сайт",
+      "legalTitle": "Документи",
+      "contactTitle": "Контакти",
+      "privacy": "Поверителност",
+      "cookies": "Бисквитки",
+      "companyMissing": "Данните на фирмата се попълват.",
+      "rights": "Всички права запазени."
+    },
+    "thanks": {
+      "title": "Благодарим ви.",
+      "text": "Запитването е получено. Следваща стъпка: преглеждаме модела и локацията и се свързваме с вас.",
+      "back": "Обратно към моделите"
+    },
+    "privacy": {
+      "title": "Политика за поверителност",
+      "draftNote": "Този текст е работна рамка, а не юридически документ. Трябва да бъде допълнен с данните на администратора и прегледан от юрист преди пускане на реклама."
+    },
+    "cookies": {
+      "title": "Политика за бисквитки",
+      "draftNote": "Този текст е работна рамка. Допълнете го със списъка на реално използваните бисквитки, след като бъдат свързани Google Analytics, Google Ads и Meta Pixel."
+    },
+    "quickAnswers": [
+      {
+        "q": "Какъв дом ми подхожда?",
+        "a": "Сравнете четирите модела",
+        "href": "/{loc}/{models}/"
+      },
+      {
+        "q": "Какво влиза в цената?",
+        "a": "Разбивка по осем пера",
+        "href": "/{loc}/{pricing}/"
+      },
+      {
+        "q": "Какво е нужно на моя парцел?",
+        "a": "Изисквания и разрешителни",
+        "href": "/{loc}/{pricing}/#quote"
+      }
+    ]
+  },
+  "en": {
+    "locale": "en",
+    "label": "English",
+    "dir": {
+      "models": "models",
+      "tourism": "tourism",
+      "pricing": "pricing",
+      "privacy": "privacy",
+      "cookies": "cookies",
+      "thanks": "thank-you"
+    },
+    "nav": {
+      "models": "Models",
+      "pricing": "Pricing",
+      "tourism": "For business",
+      "process": "How we work",
+      "faq": "Questions",
+      "quote": "Get a quote",
+      "menu": "Menu",
+      "close": "Close",
+      "skip": "Skip to content"
+    },
+    "common": {
+      "tbd": "to be confirmed",
+      "onRequest": "on request",
+      "placeholderNote": "to be filled in",
+      "render": "Visualisation",
+      "photo": "Photograph of a delivered house",
+      "from": "from",
+      "vatIncluded": "VAT included",
+      "vatExcluded": "excl. VAT",
+      "vatUnknown": "VAT: to be confirmed",
+      "area": "Area",
+      "areaTotal": "Built-up area",
+      "areaInterior": "Interior area",
+      "areaTerrace": "Deck",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "sleeps": "Sleeps",
+      "viewModel": "View the model",
+      "quoteForModel": "Get a quote for this model",
+      "allModels": "All models",
+      "call": "Call us",
+      "getQuote": "Get a quote",
+      "back": "Back",
+      "next": "Next",
+      "openPlan": "Open the plan",
+      "closePlan": "Close",
+      "more": "More",
+      "sqm": "m²"
+    },
+    "hero": {
+      "title": "Modular homes for your plot",
+      "lead": "Choose a model and a package. We cost the delivery, the crane and the installation for your ground, and show plainly what the price covers and what is paid separately.",
+      "primary": "See the models",
+      "secondary": "Get an individual quote",
+      "priceNote": "Prices are for a specific package and exclude delivery, foundation and installation until we have seen the plot."
+    },
+    "scenarios": {
+      "title": "Two different conversations",
+      "lead": "Choosing a module to live in and choosing one for a tourism site follow different criteria. Start from your case.",
+      "living": {
+        "title": "To live in",
+        "text": "Year-round living or a second home. What matters is the insulation package, heating, permits and the connection to power and water.",
+        "cta": "Models to live in"
+      },
+      "tourism": {
+        "title": "For a tourism business",
+        "text": "Guest houses, campsites and holiday parks. What matters is the number of identical units, the fit-out for daily operation and phasing the installation.",
+        "cta": "Modules for business"
+      }
+    },
+    "catalog": {
+      "title": "The models",
+      "lead": "A short range where the differences are clear. Every model has its own page with a gallery, package and technical data.",
+      "filterAll": "All",
+      "filterLiving": "To live in",
+      "filterTourism": "For tourism",
+      "empty": "No models in this category."
+    },
+    "costs": {
+      "title": "What the price covers and what is costed separately",
+      "lead": "A price per square metre does not answer what the house will cost on your plot. So we split the project into eight items and say where each one stands.",
+      "status": {
+        "included": "Included",
+        "separate": "Paid separately",
+        "calculated": "Costed after a site survey",
+        "tbd": "To be confirmed"
+      },
+      "items": {
+        "house": {
+          "title": "The house and its fit-out",
+          "text": "Structure, insulation, external cladding, windows and doors, internal wall and ceiling lining, flooring, bathroom, kitchen and electrical installation — to the extent of the chosen package."
+        },
+        "delivery": {
+          "title": "Delivery to site",
+          "text": "Transport from the factory to the plot. Depends on distance, the module's dimensions and whether the route is passable."
+        },
+        "crane": {
+          "title": "Unloading and crane",
+          "text": "A mobile crane with the right capacity and somewhere to stand. Depends on the weight of the module and the approach to the building footprint."
+        },
+        "assembly": {
+          "title": "Installation on site",
+          "text": "Positioning on the foundation, joining the modules on two-module houses, finishing the joints and handing over in working order."
+        },
+        "foundation": {
+          "title": "Foundation",
+          "text": "Screw piles, concrete pads or a slab. The choice depends on the soil, the slope and how the building is treated under the permit."
+        },
+        "utilities": {
+          "title": "Power, water and drainage connections",
+          "text": "Connection contracts are signed by the owner with the electricity and water utilities. We connect the house to the point brought out on the plot."
+        },
+        "permits": {
+          "title": "Design and permits",
+          "text": "A low-rise prefabricated dwelling is a category V construction in Bulgaria and needs a building permit from the municipal chief architect. It requires a plot survey drawing, a design by a licensed designer and preliminary connection agreements. Timescales and fees are set by the municipality."
+        },
+        "extras": {
+          "title": "Additional equipment",
+          "text": "Appliances, air conditioning, a hot tub, pergola, fencing, landscaping and anything outside the package."
+        }
+      },
+      "vatLabel": "VAT",
+      "vatNote": "The standard rate in Bulgaria is 20%. Whether it is included in a shown price is marked next to that price.",
+      "finalNote": "A final price follows once the plot and the chosen package are known. We do not commit to installing without the required permits."
+    },
+    "proof": {
+      "title": "Evidence, not promises",
+      "lead": "This section is filled only with material from real sites. Until that exists the space stays empty rather than being filled with someone else's photographs.",
+      "video": {
+        "title": "Video tour",
+        "empty": "The video is being prepared."
+      },
+      "production": {
+        "title": "Production and installation",
+        "empty": "Photographs from production are being prepared."
+      },
+      "projects": {
+        "title": "Completed projects",
+        "empty": "The first completed sites will be published here with location, model and scope of work."
+      },
+      "manufacturer": {
+        "title": "Manufacturer and our role"
+      },
+      "warranty": {
+        "title": "Warranty",
+        "structure": "Structure",
+        "finishes": "Fit-out",
+        "empty": "Warranty terms are being confirmed."
+      },
+      "showroom": {
+        "title": "Visit a house",
+        "unavailable": "There is currently no house open to visit. When there is, booking will appear here."
+      }
+    },
+    "process": {
+      "title": "From choosing a model to handover",
+      "lead": "Seven steps. Timescales are confirmed with the quote, because they depend on the model, the plot and the municipality.",
+      "steps": [
+        {
+          "title": "Choosing a model",
+          "text": "You tell us what the house is for and what the plot is like. If you have no land yet, we start from what it needs to satisfy."
+        },
+        {
+          "title": "Site survey",
+          "text": "We check truck and crane access, the slope, the soil and the distance to the power and water points. Much of it is visible from a survey drawing and photographs."
+        },
+        {
+          "title": "Quote",
+          "text": "You get a breakdown across the eight items, not a single lump sum."
+        },
+        {
+          "title": "Design and permits",
+          "text": "We prepare the documentation for the municipality. The approval is issued by the municipality, not by us."
+        },
+        {
+          "title": "Production",
+          "text": "The house is built indoors, whatever the weather outside."
+        },
+        {
+          "title": "Delivery and installation",
+          "text": "Truck, crane, positioning on the foundation and connection."
+        },
+        {
+          "title": "Handover",
+          "text": "Inspection, snagging, documents and warranty."
+        }
+      ]
+    },
+    "faq": {
+      "title": "The questions we are asked most",
+      "items": [
+        {
+          "q": "Do I need a building permit?",
+          "a": "For a low-rise dwelling or holiday house, yes. Such a building is a category V construction and the permit is issued by the municipal chief architect. The procedure runs through a plot survey drawing, a design by a licensed designer and preliminary connection agreements with the electricity and water utilities. Requirements and fees differ between municipalities — confirm them with yours, or send us an enquiry and we will check together."
+        },
+        {
+          "q": "What foundation is needed?",
+          "a": "Screw piles, concrete pads or a slab. The choice depends on the soil, the slope of the ground and how the building is treated under the permit. The foundation is specified after a survey and quoted separately."
+        },
+        {
+          "q": "Can the house be used all year round?",
+          "a": "It depends on the insulation package of the particular model. Insulation and glazing values sit in the technical data on the model page; they will be published there once the manufacturer confirms them."
+        },
+        {
+          "q": "How long does it take from order to moving in?",
+          "a": "The timeline is production, the permit procedure and installation. The production time is confirmed at order and the permit procedure depends on the municipality. So we give a date in the quote rather than in advance."
+        },
+        {
+          "q": "Can the house be moved later?",
+          "a": "The structure is designed to be transported and lifted by crane. Whether moving it is practical depends on the foundation type and the utility connections — confirmed case by case."
+        },
+        {
+          "q": "Do you deliver across the country?",
+          "a": "Delivery range and cost depend on distance and access. Put the town in your enquiry and we will cost the transport and crane for it."
+        }
+      ]
+    },
+    "model": {
+      "gallery": "Gallery",
+      "specs": "Key data",
+      "priceTitle": "Price",
+      "packageTitle": "Package",
+      "packageEmpty": "The package table is filled with data from the manufacturer.",
+      "techTitle": "Technical data",
+      "techEmpty": "Technical data is filled in from the manufacturer.",
+      "planTitle": "Floor plan",
+      "planEmpty": "The plan for this model has not been received from the manufacturer yet. Once uploaded it opens full size.",
+      "roomsTitle": "Rooms and how they are used",
+      "roomsEmpty": "The room description follows once the plan is confirmed.",
+      "deliveryTitle": "Delivery and installation",
+      "requirementsTitle": "What the plot needs",
+      "requirements": [
+        "Truck access at least 3.5 m wide, with no low branches or sagging cables on the route.",
+        "Somewhere for a mobile crane to stand near the building footprint.",
+        "Reasonably level ground, or levelling allowed for.",
+        "Power and water brought out to the footprint, or a plan to bring them out.",
+        "Guaranteed access to the property on installation day."
+      ],
+      "requirementsNote": "These are the general requirements. The final ones are confirmed after surveying your plot.",
+      "faqTitle": "Questions about this model",
+      "formTitle": "A quote for this model",
+      "otherModels": "The other models"
+    },
+    "tourism": {
+      "title": "Modules for a tourism site",
+      "lead": "Guest houses, campsites, holiday parks and small hotels adding rooms without opening a building site.",
+      "modelsTitle": "Suitable models",
+      "capacityTitle": "Capacity and plans",
+      "capacityNote": "Each module's capacity is on its own page. Plans will be published full size once received.",
+      "operationTitle": "Fit-out for daily operation",
+      "operationText": "A rented unit is fitted out differently from a home: harder-wearing floors, surfaces that clean quickly, a separate meter board per unit and a heating answer for the off-season. Scope is agreed per site.",
+      "quantityTitle": "One module or several",
+      "quantityText": "A single module or several identical ones. Above one unit the installation can be phased around the site's season.",
+      "stagesTitle": "How we assess a site",
+      "stages": [
+        {
+          "title": "Scope",
+          "text": "Number of units, operating season and the intended category of the site."
+        },
+        {
+          "title": "Site survey",
+          "text": "Access, unit placement, distances to services and to the shared areas."
+        },
+        {
+          "title": "Infrastructure",
+          "text": "Power, water, drainage and paths between the units — what exists and what is missing."
+        },
+        {
+          "title": "Permits",
+          "text": "We check the status of the property and what the municipality requires for the chosen number of buildings."
+        },
+        {
+          "title": "Phased quote",
+          "text": "A breakdown per unit and per phase, so the budget can be planned."
+        }
+      ],
+      "cta": "Request a quote for your site",
+      "noYield": "We do not publish yield or payback projections. That calculation only means something with your location, nightly rate and running costs — we will do it with you on request."
+    },
+    "form": {
+      "title": "Get a quote for your plot",
+      "lead": "Two short steps. No document uploads at this stage.",
+      "step1": "Step 1 of 2 · The project",
+      "step2": "Step 2 of 2 · Contact",
+      "purpose": {
+        "label": "What is the house for?",
+        "options": [
+          "Permanent living",
+          "A holiday or second home",
+          "Renting out"
+        ]
+      },
+      "model": {
+        "label": "Which model interests you?",
+        "placeholder": "Choose",
+        "undecided": "Not decided — I need advice"
+      },
+      "location": {
+        "label": "Where will the house be installed?",
+        "placeholder": "Town or municipality"
+      },
+      "land": {
+        "label": "Do you have a plot?",
+        "options": [
+          "Yes, I own it",
+          "I am still looking"
+        ]
+      },
+      "budget": {
+        "label": "Approximate project budget, installation included",
+        "options": [
+          "up to €30,000",
+          "€30,000 – 60,000",
+          "€60,000 – 100,000",
+          "over €100,000",
+          "I need advice"
+        ]
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "First and last name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+359"
+      },
+      "email": {
+        "label": "Email",
+        "optional": "optional",
+        "placeholder": "name@example.com"
+      },
+      "channel": {
+        "label": "How should we contact you?",
+        "options": [
+          "Phone",
+          "Viber",
+          "WhatsApp",
+          "Email"
+        ]
+      },
+      "time": {
+        "label": "Best time",
+        "options": [
+          "Morning",
+          "Afternoon",
+          "Evening",
+          "Any time"
+        ]
+      },
+      "timeline": {
+        "label": "When are you planning to buy?",
+        "options": [
+          "Within 3 months",
+          "3 – 6 months",
+          "6 – 12 months",
+          "Still researching"
+        ]
+      },
+      "consent": "I agree that my details may be used to prepare a quote.",
+      "consentLink": "Privacy policy",
+      "submit": "Send the enquiry",
+      "sending": "Sending…",
+      "next": "Continue",
+      "back": "Back",
+      "errors": {
+        "required": "This field is required.",
+        "name": "Please enter a name.",
+        "phone": "Please enter a phone number we can reach you on.",
+        "email": "Check the email address.",
+        "consent": "We need your consent to process the enquiry.",
+        "summary": "Please check the highlighted fields."
+      },
+      "successTitle": "Your enquiry has been sent.",
+      "successText": "Next step: we review the model and the location and come back to you with questions before the quote.",
+      "notConnectedTitle": "The enquiry was NOT sent.",
+      "notConnectedText": "The form is not yet connected to an enquiry system. Please get in touch directly — your answers are kept in this window so you do not have to type them again.",
+      "responseTimeUnknown": "Response time to be confirmed."
+    },
+    "consent": {
+      "title": "Cookies",
+      "text": "We use necessary cookies to run the site. Advertising and analytics cookies load only with your consent.",
+      "accept": "Accept all",
+      "necessary": "Necessary only",
+      "settings": "Settings",
+      "save": "Save choice",
+      "catNecessary": "Necessary",
+      "catNecessaryText": "Required for the site to work. Cannot be switched off.",
+      "catAnalytics": "Analytics",
+      "catAnalyticsText": "Help us see which pages get read and where people stop.",
+      "catMarketing": "Advertising",
+      "catMarketingText": "Allow measurement of Google and Facebook campaigns."
+    },
+    "footer": {
+      "about": "Modular homes delivered and installed in Bulgaria.",
+      "navTitle": "Site",
+      "legalTitle": "Legal",
+      "contactTitle": "Contact",
+      "privacy": "Privacy",
+      "cookies": "Cookies",
+      "companyMissing": "Company details to be filled in.",
+      "rights": "All rights reserved."
+    },
+    "thanks": {
+      "title": "Thank you.",
+      "text": "Your enquiry has been received. Next step: we review the model and the location and get in touch.",
+      "back": "Back to the models"
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "draftNote": "This is a working outline, not a legal document. It must be completed with the controller's details and reviewed by a lawyer before advertising starts."
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "draftNote": "This is a working outline. Complete it with the cookies actually in use once Google Analytics, Google Ads and Meta Pixel are connected."
+    },
+    "quickAnswers": [
+      {
+        "q": "Which house suits me?",
+        "a": "Compare the four models",
+        "href": "/{loc}/{models}/"
+      },
+      {
+        "q": "What does the price cover?",
+        "a": "A breakdown across eight items",
+        "href": "/{loc}/{pricing}/"
+      },
+      {
+        "q": "What will my plot need?",
+        "a": "Requirements and permits",
+        "href": "/{loc}/{pricing}/#quote"
+      }
+    ]
+  }
+}

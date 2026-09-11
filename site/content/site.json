@@ -1,0 +1,121 @@
+{
+  "_readme": "Single source of truth for company facts. Every null is a deliberate placeholder — the build prints a report of them and the site renders 'уточнява се' instead of inventing a value. Fill these in before running paid traffic.",
+  "buildMode": "draft",
+  "_buildMode": "\"draft\" shows every unfilled block with the exact JSON key that fills it, so the site can be reviewed. \"live\" hides blocks that have no content yet, so a visitor never sees an empty promise or an internal field name. Switch to \"live\" before pointing traffic at the site.",
+  "brand": {
+    "name": "MODULA",
+    "nameConfirmed": false,
+    "tagline": {
+      "bg": "Модулни къщи за вашия парцел",
+      "en": "Modular homes for your plot"
+    }
+  },
+  "company": {
+    "legalName": null,
+    "eik": null,
+    "vatNumber": null,
+    "address": null,
+    "city": null,
+    "country": "BG"
+  },
+  "contacts": {
+    "phone": null,
+    "phoneDisplay": null,
+    "email": null,
+    "viber": null,
+    "workingHours": null
+  },
+  "manufacturer": {
+    "name": null,
+    "country": null,
+    "since": null,
+    "ourRole": {
+      "bg": "Ние сме официален представител за България: консултираме избора на модел, изготвяме офертата за вашия парцел, организираме доставката, крана и монтажа и оставаме ваш контакт след предаването.",
+      "en": "We are the official representative for Bulgaria: we advise on the model, prepare the quote for your plot, arrange delivery, craning and installation, and stay your point of contact after handover."
+    },
+    "ourRoleConfirmed": false
+  },
+  "currency": {
+    "code": "EUR",
+    "symbol": "€",
+    "showBgnEquivalent": true,
+    "bgnRate": 1.95583,
+    "vatRatePercent": 20,
+    "vatIncludedInPrices": null
+  },
+  "forms": {
+    "endpoint": null,
+    "method": "POST",
+    "responseTime": null,
+    "_note": "Until 'endpoint' is a real URL the form validates, keeps the data and tells the visitor honestly that it was NOT sent. It never fakes a success screen."
+  },
+  "analytics": {
+    "gtmId": null,
+    "ga4Id": null,
+    "metaPixelId": null,
+    "_note": "Nothing loads until an id is set here AND the visitor accepts the matching cookie category."
+  },
+  "proof": {
+    "videoTourUrl": null,
+    "productionPhotos": [],
+    "projects": [],
+    "showroom": {
+      "available": false,
+      "address": null,
+      "note": null
+    }
+  },
+  "warranty": {
+    "structureYears": null,
+    "finishesYears": null,
+    "terms": null
+  },
+  "costItems": [
+    {
+      "id": "house",
+      "status": "included",
+      "confirm": true
+    },
+    {
+      "id": "delivery",
+      "status": "calculated",
+      "confirm": true
+    },
+    {
+      "id": "crane",
+      "status": "calculated",
+      "confirm": true
+    },
+    {
+      "id": "assembly",
+      "status": "tbd",
+      "confirm": true
+    },
+    {
+      "id": "foundation",
+      "status": "calculated",
+      "confirm": true
+    },
+    {
+      "id": "utilities",
+      "status": "separate",
+      "confirm": true
+    },
+    {
+      "id": "permits",
+      "status": "separate",
+      "confirm": true
+    },
+    {
+      "id": "extras",
+      "status": "separate",
+      "confirm": true
+    }
+  ],
+  "_statusValues": [
+    "included",
+    "separate",
+    "calculated",
+    "tbd"
+  ]
+}

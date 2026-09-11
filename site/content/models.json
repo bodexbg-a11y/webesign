@@ -1,0 +1,110 @@
+{
+  "_readme": "One entry per model. null = not yet supplied by the manufacturer; the site shows 'уточнява се' and the build lists it. 'titleConfirmed:false' means the name below is a working description of what is in the photograph, not an official product name. 'isRender' marks images that are visualisations rather than photographs of a delivered house — the site labels them.",
+
+  "models": [
+    {
+      "slug": "kompakten-modul",
+      "code": "M-01",
+      "title": { "bg": "Компактен модул", "en": "Compact module" },
+      "titleConfirmed": false,
+      "purpose": ["living", "tourism"],
+      "lead": {
+        "bg": "Един модул с тераса по дългата страна. Подходящ за гостова къща, целогодишно обитаване от двама или за туристическа база.",
+        "en": "A single module with a deck along its long side. Suited to a guest house, year-round living for two, or a rental unit."
+      },
+      "areas": { "total": null, "interior": null, "terrace": null },
+      "bedrooms": null,
+      "bathrooms": null,
+      "sleeps": null,
+      "price": { "amount": null, "packageName": null, "vatIncluded": null },
+      "hero": "olive-grove",
+      "gallery": ["olive-grove", "terrace", "bathroom"],
+      "plan": null,
+      "rooms": { "bg": null, "en": null },
+      "package": [],
+      "tech": [],
+      "notes": { "bg": null, "en": null }
+    },
+    {
+      "slug": "modul-s-terasa",
+      "code": "M-02",
+      "title": { "bg": "Модул с голяма тераса", "en": "Module with large deck" },
+      "titleConfirmed": false,
+      "purpose": ["living", "tourism"],
+      "lead": {
+        "bg": "Същата конструкция с разширена дървена тераса — мястото, където се използва къщата през по-голямата част от годината.",
+        "en": "The same structure with an extended timber deck — where the house is actually used for most of the year."
+      },
+      "areas": { "total": null, "interior": null, "terrace": null },
+      "bedrooms": null,
+      "bathrooms": null,
+      "sleeps": null,
+      "price": { "amount": null, "packageName": null, "vatIncluded": null },
+      "hero": "deck-spa",
+      "heroIsRender": true,
+      "gallery": ["deck-spa", "terrace", "interior-kitchen"],
+      "plan": null,
+      "rooms": { "bg": null, "en": null },
+      "package": [],
+      "tech": [],
+      "notes": { "bg": null, "en": null }
+    },
+    {
+      "slug": "modul-s-mezanin",
+      "code": "M-03",
+      "title": { "bg": "Модул с мецанин", "en": "Module with mezzanine" },
+      "titleConfirmed": false,
+      "purpose": ["living"],
+      "lead": {
+        "bg": "Двойна височина в дневната и метално стълбище към мецанин. Дава второ ниво без да увеличава петното върху парцела.",
+        "en": "A double-height living space with a steel stair to a mezzanine. A second level without a larger footprint on the plot."
+      },
+      "areas": { "total": null, "interior": null, "terrace": null },
+      "bedrooms": null,
+      "bathrooms": null,
+      "sleeps": null,
+      "price": { "amount": null, "packageName": null, "vatIncluded": null },
+      "hero": "stair-wide",
+      "gallery": ["stair-wide", "stair-detail", "interior-open", "bathroom"],
+      "plan": null,
+      "rooms": { "bg": null, "en": null },
+      "package": [],
+      "tech": [],
+      "notes": { "bg": null, "en": null }
+    },
+    {
+      "slug": "bungalo",
+      "code": "M-04",
+      "title": { "bg": "Бунгало", "en": "Bungalow" },
+      "titleConfirmed": false,
+      "purpose": ["tourism"],
+      "lead": {
+        "bg": "Най-малкият модул в гамата — за къмпинги, къщи за гости и бази за отдих, където се поръчват няколко еднакви единици.",
+        "en": "The smallest module in the range — for campsites, guest houses and holiday parks ordering several identical units."
+      },
+      "areas": { "total": null, "interior": null, "terrace": null },
+      "bedrooms": null,
+      "bathrooms": null,
+      "sleeps": null,
+      "price": { "amount": null, "packageName": null, "vatIncluded": null },
+      "hero": "bungalow-plinth",
+      "heroIsRender": true,
+      "gallery": ["bungalow-plinth", "forest-module", "village-forest"],
+      "plan": null,
+      "rooms": { "bg": null, "en": null },
+      "package": [],
+      "tech": [],
+      "notes": { "bg": null, "en": null }
+    }
+  ],
+
+  "renders": ["deck-spa", "lakeside-dusk", "bungalow-plinth", "village-forest", "village-alpine"],
+
+  "_fieldNotes": {
+    "areas": "In m². total = built-up area, interior = heated interior, terrace = deck. Keep them separate.",
+    "price": "amount in EUR for the named package. packageName is e.g. 'Пълно обзавеждане'. vatIncluded true/false.",
+    "package": "Rows of { key: {bg,en}, value: {bg,en} } — the комплектация table.",
+    "tech": "Rows of { key: {bg,en}, value: {bg,en} } — manufacturer technical data only.",
+    "plan": "Path under assets/plans/, e.g. 'assets/plans/m-01.svg'. SVG or a wide PNG. The lightbox is already wired."
+  }
+}
