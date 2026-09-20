@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "./SafeLink";
 
@@ -99,7 +98,6 @@ function applyConsent(consent: Consent) {
 }
 
 export default function ConsentManager() {
-  const pathname = usePathname();
   const [ready, setReady] = useState(false);
   const [consent, setConsent] = useState<Consent | null>(null);
   const [preferencesOpen, setPreferencesOpen] = useState(false);
@@ -138,8 +136,7 @@ export default function ConsentManager() {
     applyConsent(value);
   }
 
-  // Внутрішній застосунок «Графік РД-2» не є маркетинговою сторінкою — банер там зайвий.
-  if (!ready || pathname?.startsWith("/rd2")) return null;
+  if (!ready) return null;
 
   return (
     <>
